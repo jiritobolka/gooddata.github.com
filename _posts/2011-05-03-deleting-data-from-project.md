@@ -29,7 +29,7 @@ where
 * **&lt;attribute&gt;** - determines the data that will be deleted. If you want to delete whole record from a dataset, use the dataset's CONNECTION_POINT attribute.
 * **&lt;condition&gt;** - identifies the records that will be deleted. 
 
-Lets explain the _&lt;attribute&gt;_ in more detail on an example. The attribute _{attr.opportunity.id}_ is the CONNECTION_POINT_ of the _Opportunity_ dataset. The dataset also contains the _{attr.opportunity.status}_ attribute. The _{attr.opportunity.status}_ has the _{label.opportunity.status}_ label. Then the statement
+Lets explain the _&lt;attribute&gt;_ in more detail on an example. The attribute _{attr.opportunity.id}_ is the CONNECTION_POINT of the _Opportunity_ dataset. The dataset also contains the _{attr.opportunity.status}_ attribute. The _{attr.opportunity.status}_ has the _{label.opportunity.status}_ label. Then the statement
 
 <pre><code>
 DELETE FROM {attr.opportunity.status} WHERE {attr.opportunity.status}="Open";
@@ -59,3 +59,5 @@ DELETE FROM {attr.opportunity.id} WHERE {label.opportunity.salesrep}&gt;"CLOONEY
 </code></pre>
 
 deletes all opportunities that are associated with sales reps that come after _"CLOONEY"_ in the alphabet.
+
+And the last one. You need to be the admin to invoke this API.  
