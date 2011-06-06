@@ -9,7 +9,9 @@ _by ZD ([@zsvoboda](http://twitter.com/#!zsvoboda))_
 
 The new data deletion API has been introduced in GoodData [Release 51](http://support.gooddata.com/entries/20068968-release-51-notes-wednesday-may-4-2011). The API is located at the following URL. <pre><code>https://secure.gooddata.com/gdc/&lt;your-project-id&gt;/dml/manage</code></pre>
 
-The API requires a _MAQL DELETE_ statement that performs the data deletion. Lets start with a few examples:
+You can also use the CL tool <code>ExecuteDml(maql="...")</code> command instead of invoking the API directly. 
+
+Both <code>ExecuteDml</code>  and the API require a _MAQL DELETE_ statement that performs the data deletion. Lets start with a few examples:
 
 <pre><code>
 DELETE FROM {attr.opportunity.id} WHERE {fact.oppoprtunity.probability}&lt;0 OR {fact.oppoprtunity.amount}&lt;100;

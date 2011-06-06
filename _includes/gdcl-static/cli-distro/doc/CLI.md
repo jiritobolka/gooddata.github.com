@@ -59,7 +59,6 @@ Project Management Commands:
 
 `OpenProject(id="...");` - open an existing project for data modeling and data upload.
 - id - identifier of an existing project (takes the form of an MD5 hash)
--
 
 `RememberProject(fileName="...");` - saves the current project identifier into the specified file
 - fileName - file to save the project identifier
@@ -74,6 +73,14 @@ Project Management Commands:
 - msg   - *(optional)* invitation message
 - role  - *(optional)* initial user's role: `admin`|`editor`|`dashboard only`
 
+`ExportProject(tokenFile="...", exportUsers="...", exportData="...", authorizedUsers="...");` - exports an existing project to temporary storage and returns the import token
+- tokenFile - a file where the import token will be stored
+- exportUsers - export existing project users `true` | `false`
+- exportData - export existing project data `true` | `false`
+- authorizedUsers  - *(optional)* comma separated list of valid GoodData users who can import the project
+
+`ImportProject(tokenFile="...");` - imports a previously exported project content identified by the import token to a new empty project
+- tokenFile - a file where the import token will be stored
 
 Metadata Management Commands:
 -----------------------------
@@ -134,8 +141,8 @@ Logical Model Management Commands:
 - ifExists - *(optional)* if set to true the command quits silently if the maqlFile does not exist (true | false, default is false)
 
 
-Data Transfer Commands:
------------------------
+Data Commands:
+--------------
 
 > **Important:** All the commands in this section expect
 > to know what project to work in and know the data model
@@ -150,6 +157,8 @@ Data Transfer Commands:
 `Dump(csvFile="...");` - dumps the connector data to a local CSV file
 - csvFile   - path to the CSV file
 
+`ExecuteDml(maql="...");` - executes a MAQL DML command (e.g. DELETE)
+- maql   - the maqlDML command
 
 Data Connectors:
 ==================
