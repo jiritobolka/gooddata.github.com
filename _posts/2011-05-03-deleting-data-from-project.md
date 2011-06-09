@@ -34,7 +34,7 @@ where
 Lets explain the _&lt;attribute&gt;_ in more detail on an example. The attribute _{attr.opportunity.id}_ is the CONNECTION_POINT of the _Opportunity_ dataset. The dataset also contains the _{attr.opportunity.status}_ attribute. The _{attr.opportunity.status}_ has the _{label.opportunity.status}_ label. Then the statement
 
 <pre><code>
-DELETE FROM {attr.opportunity.status} WHERE {attr.opportunity.status}="Open";
+DELETE FROM {attr.opportunity.status} WHERE {label.opportunity.status}="Open";
 </code></pre>
 
 deletes the single _Open_ value from the _{attr.opportunity.status}_ attribute. The dataset's records are preserved. This statement most probably breaks the referential integrity of the project as the records with the _Open_ status no longer reference any value in the {attr.opportunity.status} attribute. 
@@ -42,7 +42,7 @@ deletes the single _Open_ value from the _{attr.opportunity.status}_ attribute. 
 The statement
 
 <pre><code>
-DELETE FROM {attr.opportunity.id} WHERE {attr.opportunity.status}="Open";
+DELETE FROM {attr.opportunity.id} WHERE {label.opportunity.status}="Open";
 </code></pre>
 
 deletes all records with the attribute {attr.opportunity.status} equal to _Open_ .  
