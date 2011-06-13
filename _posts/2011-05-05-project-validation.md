@@ -15,6 +15,6 @@ The project validation API checks a GoodData project for the most common errors:
 
 The project validation API can be invoked at the following URL
 
-<pre><code>https://secure.gooddata.com/gdc/md/&lt;your-project-id&gt;/validate</code></pre>
+<pre><code>https://secure.gooddata.com/gdc/md/&lt;your-project-id&gt;/validate</code></pre> 
 
 The logged user must be associated with the _admin_ role to be able to invoke the API.
