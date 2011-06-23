@@ -5,7 +5,7 @@ layout: post
 ---
 
 # {{ page.title }}
-_by Tomas Svarovsky ([@fluke777](http://twitter.com/#!fluke777))_
+_by ZD ([@zsvoboda](http://twitter.com/#!zsvoboda))_
 
 Tomas has published two nice articles about handling user hierarchies in GoodData. He uses variables for smart implementation of aggregating facts in user hierarchies. Here are the articles:
 
