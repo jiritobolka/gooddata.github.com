@@ -19,7 +19,7 @@ Let's grab the report's embedding URL from the embed dialog. We will just cherry
 
 <code>https://secure.gooddata.com/reportWidget.html#project=/gdc/projects/Project4&report=/gdc/md/Project4/obj/20887</code>
 
-![Report URL]({{ site.root }}/images/posts/2011-06-29-filtering-embedded-reports-1.png)
+![Report URL]({{ site.root }}/images/posts/2011-06-29-filtering-embedded-reports-2.png)
 
 We put the IFrame URL to the browser and the report appears in a separate tab.
 
