@@ -57,7 +57,7 @@ Multiple conditions with the same label are joined with the _OR_ logical operato
 
 ![Filtered Report]({{ site.root }}/images/posts/2011-06-29-filtering-embedded-reports-8.png)
 
-And least but not last, the same trick works with embedded dashboards!
+And least but not last, the same trick works with the embedded dashboards too!
 
 
 
