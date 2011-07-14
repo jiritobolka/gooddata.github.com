@@ -25,6 +25,8 @@ I think that the most of the command's parameters are self-explanatory. Just in 
 - country   - (optional) the new user's country (e.g. 'cz' or 'us;ca')
 - position   - (optional) the new user's position
 - ssoProvider - (optional) the new user's SSO provider (e.g. SALESFORCE)
+- usersFile - (optional) writes the new user's URI to the specified file
+- append - (optional) should the users file be appended (default is false)
 
 There is obviously a nice REST API under the new command. Feel free to dig into the [CL tool source code](https://github.com/gooddata/GoodData-CL/blob/master/backend/src/main/java/com/gooddata/integration/rest/GdcRESTApiWrapper.java) to figure it out.
  
