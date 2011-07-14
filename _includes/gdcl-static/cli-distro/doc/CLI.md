@@ -73,6 +73,24 @@ Project Management Commands:
 - msg   - *(optional)* invitation message
 - role  - *(optional)* initial user's role: `admin`|`editor`|`dashboard only`
 
+`CreateUser(domain="...", username="...", password="...", firstName="...", lastName="...", company="...", phone="...", country="...", position="...", ssoProvider="...", usersFile="...", append="...");` - creates a new user.
+- domain - the GoodData users domain. The domain needs to be created by GoodData admins and associated with your GoodData account
+- username   - the new user's username
+- password   - the new user's password
+- firstName   - the new user's first name
+- lastName   - the new user's last name
+- company   - *(optional)* the new user's company name
+- phone   - *(optional)* the new user's phone
+- country   - *(optional)* the new user's country (e.g. 'cz' or 'us;ca')
+- position   - *(optional)* the new user's position
+- ssoProvider - *(optional)* the new user's SSO provider (e.g. SALESFORCE)
+- usersFile - (optional) writes the user's URI to the specified file
+- append - (optional) should the users file be appended (default is false)
+
+`AddUserToProject(usersFile="...", role="...")` - adds users in the usersFile to the open project in a specific role
+- usersFile - (optional) writes the user's URI to the specified file
+- role  - (optional) initial user's role: admin|editor|dashboard only
+
 `ExportProject(tokenFile="...", exportUsers="...", exportData="...", authorizedUsers="...");` - exports an existing project to temporary storage and returns the import token
 - tokenFile - a file where the import token will be stored
 - exportUsers - export existing project users `true` | `false`
@@ -223,6 +241,7 @@ JDBC Connector Commands:
 - driver     - JDBC driver string (e.g. "org.apache.derby.jdbc.EmbeddedDriver"), you'll need to place the JAR with the JDBC driver to the lib subdirectory
 - url        - JDBC url (e.g. "jdbc:derby:mydb")
 - query      - SQL query (e.g. "SELECT employee,dept,salary FROM payroll")
+- queryFile  - a file that contains the SQL query (e.g. "SELECT employee,dept,salary FROM payroll")
 - username   - *(optional)* JDBC username
 - password   - *(optional)* JDBC password
 
