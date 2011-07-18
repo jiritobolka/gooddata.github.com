@@ -7,7 +7,7 @@ layout: post
 # {{ page.title }}
 _by ZD ([@zsvoboda](http://twitter.com/#!zsvoboda))_
 
-The new data deletion API has been introduced in GoodData [Release 51](http://support.gooddata.com/entries/20068968-release-51-notes-wednesday-may-4-2011). The API is located at the following URL. <pre><code>https://secure.gooddata.com/gdc/&lt;your-project-id&gt;/dml/manage</code></pre>
+The new data deletion API has been introduced in GoodData [Release 51](http://support.gooddata.com/entries/20068968-release-51-notes-wednesday-may-4-2011). The API is located at the following URL. <pre><code>https://secure.gooddata.com/gdc/md/&lt;your-project-id&gt;/dml/manage</code></pre>
 
 You can also use the CL tool <code>ExecuteDml(maql="...")</code> command instead of invoking the API directly. 
 
