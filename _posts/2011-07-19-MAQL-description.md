@@ -63,7 +63,7 @@ First statement creates new fact `Salary` (LDM) and the `{f_salary}` column in t
 
 The first line commands create the LDM attribute named "Employee". The `AS KEYS {f_employee.id} FULLSET` statement defines how attribute will be defined in PDM. Attributes are defined as database tables with unique ID's for every row in the table (SQL primary key = FULLSET) 
 
-The second and the third row add labels to the "Employee" attribute. Let me describe what labels are. Labels are text representation of the same semantic value. In this example Employee attribute is represented as "ID", but also as "SSN" and "Name" (You can choose from them when you create reports in GoodData UI). Labels are define as columns in PDM tables (`{nm_ssn_}` and `{nm_name}`) and also generated into the header of data loading template `CSV` file. We will take a look on how data loading works later. 
+The second and the third row add labels to the "Employee" attribute. Let me describe what labels are. Labels are text representation of the same semantic value. In this example Employee attribute is represented as "ID", but also as "SSN" and "Name" (You can choose from them when you create reports in GoodData UI). Labels are defined as columns in PDM tables (`{nm_ssn_}` and `{nm_name}`) and also generated into the header of data loading template `CSV` file. We will take a look on how data loading works later. 
 
 4. Creating attribute department:
 
@@ -73,7 +73,7 @@ The second and the third row add labels to the "Employee" attribute. Let me desc
 
 `ALTER DATASET {dataset.employee} ADD {attr.employee.department};`
 
-Again, commands in the first row create the "Department" attribute. Statement `AS KEYS {d_employee_department.id} FULLSET` defines Primary key in `{d_employee_department}` database table and `{f_employee.department_id}` is column in `{f_employee}` table. This column provides connection between two database tables (foreign key).
+Again, commands in the first row create the "Department" attribute. Statement `AS KEYS {d_employee_department.id} FULLSET` defines Primary key in `{d_employee_department}` database table. `{f_employee.department_id}` is column in `{f_employee}` table and provides connection between two database tables (foreign key).
 
 In second row, we added label to "Department" attribute. Label is defined as `nm_department` column in `{d_employee_department}` table. 
 
@@ -83,7 +83,7 @@ Finally we add the "Department" attribute to the "Employee" dataset.
 
 `SYNCHRONIZE {dataset.employee};`
 
-Whenever you want to apply the LDM changes to PDM and to the data loading interfaces you have to call the `SYNCHRONIZE` command. That means when you call SYNCHRONIZE for the first time, SQL tables are created. (altered after next `SYNCHRONIZE` call). SYNCHRONIZE command runs SQL transaction, so you have to prepare complete model before run it.
+Whenever you want to apply the LDM changes to PDM and to the Data Loading Interfaces you have to call the `SYNCHRONIZE` command. That means when you call SYNCHRONIZE for the first time, SQL tables are created (altered after next `SYNCHRONIZE` call). SYNCHRONIZE command runs SQL transaction, so you have to prepare complete model before run it.
 
 (**NOTE:** Remember, that calling SYNCHRONIZE will change your physical storage and empty all data and require to load it back.)
 
