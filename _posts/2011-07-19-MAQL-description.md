@@ -99,7 +99,7 @@ Now we have LDM and corresponding PDM tables prepared. We would like to upload t
 
 The DLI API is a combination of a private WebDav storage where we upload the data and a simple asynchronous call that starts the data loading process. You can also check out the [DLI documentation](http://developer.gooddata.com/api/#data).
 
-The data are wrapped in a self-describing package, that contains the data file with predefined columns which you can add data into and simple manifest that describes the mapping between data file and PDM. You can download and check out the package from following URL:
+The data are wrapped in a self-describing package, that contains the data file with predefined columns in which you can add data and simple manifest that describes the mapping between data file and PDM. You can download and check out the package from following URL:
 
 `https://secure.gooddata.com/gdc/md/<your-project-number>/ldm/singleloadinterface/dataset.<your-dataset-name>/template`
 
