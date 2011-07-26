@@ -5,7 +5,7 @@ layout: post
 ---
 
 # {{ page.title }}
--_by Jiri Tobolka_
+_by Jiri Tobolka_
 
 In the [previous part]({{ site.root }}/blog/2011/06/22/useCases-part1/) of this series we've created a new project defined `incorrect XML config` file and finally we've updated that file correctly. This is second part of the series in which we'll be using basically the same data model and we'll update it. Again we have two Examples - first example is about adding new field to the model. In second example we will upload new dataset.
 
