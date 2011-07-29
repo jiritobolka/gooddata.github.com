@@ -12,7 +12,7 @@ Analyzing the latest and the greatest data in GoodData is easy. You simply add u
 
 This article introduces the analytic technique that we call **snapshotting**. We’ll stay in the realm of sales and describe the snapshotting on a simple sales automation example. Welcome to the world of opportunities, sales stages, and **change**.
 
-NOTE: Keep in mind that you’ll hear similar questions from your help desk guy, quality guy or a head of your engineering. Snapshotting help you in these cases as well. Follow this article and substitute case, bug or feature for the opportunity.
+**NOTE:** Keep in mind that you’ll hear similar questions from your help desk guy, quality guy or a head of your engineering. Snapshotting help you in these cases as well. Follow this article and substitute case, bug or feature for the opportunity.
 
 **Sales Analytics**
 
@@ -26,7 +26,7 @@ Snapshotting is straightforward and easy to use technique that helps answering t
 
 So if we have a project that accumulates snapshots for 118 weeks, most of our opportunities will be duplicated 118 times in the project. Few of them that have been created after we started snapshotting have less than 118 versions. Each version is associated with a snapshot date (perhaps Monday of each week) and the snapshot ID. It is very beneficial to use snapshot IDs in sequence without gaps. We can then simply identify previous/next snapshots as the current ID minus/plus one.
 
-And here is the first catch. A simple `SUM(Amount) WHERE Status = Open` metric measures your pipeline returns a number that is roughly 10 times higher than what we expect. No wonder, because we are adding up all ten versions of each opportunity. We need to be smarter here. We can define metric that show the total amount for individual snapshot only:
+And here is the first catch. A simple `SELECT SUM(Amount) WHERE Status = Open` metric measures your pipeline returns a number that is roughly 118 times higher than what we expect. No wonder, because we are adding up all ten versions of each opportunity. We need to be smarter here. We can define metric that shows the total amount for individual snapshot only:
 
 Pipeline \[118 weeks ago\]: `SELECT SUM(Amount) WHERE Status = Open AND SnapshotId = 1`
 
@@ -42,7 +42,7 @@ Now if we break down the Snapshot \[Most Recent\] metric by the SalesRep, we wil
 
 Snapshot \[Most Recent\]: `SELECT MAX(SnapshotId) BY ALL IN ALL OTHER DIMENSIONS`
 
-This metric returns the MAX snapshot regardless any dimensions. The last snapshot (= 118) for all Sales Reps including John, for all regions, for all Products etc. When you add the `BY ALL IN ALL OTHER DIMENSIONS` statement to your metric it returns the grand total of all the time and all dimensions. It returns a constant.
+This metric returns the MAX snapshot regardless any dimensions. The last snapshot (= 118) for all Sales Reps including John, for all regions, for all Products etc. When you add the `BY ALL IN ALL OTHER DIMENSIONS` statement to your metric it returns the grand total (MAX) of all the time and all dimensions. It returns a constant.
 
 **NOTE:** Find out more examples and aggregation concepts in [this documentation](http://developer.gooddata.com/docs/maql.html). 
 
@@ -54,7 +54,7 @@ Similarly we can compute the pipeline for the first snapshot (the oldest one). T
 
 Snapshot \[Oldest\]: `SELECT MIN(SnapshotId) BY ALL IN ALL OTHER DIMENSIONS`
 
-and its usage in the pipeline metric:
+and use it in the following pipeline metric:
 
 Pipeline \[Oldest\]: `SELECT SUM(Amount) WHERE Status = `Open` AND SnapshotId = Snapshot [Oldest]`
 
@@ -66,9 +66,9 @@ Snapshot \[First in Period\]: `SELECT MIN(SnapshotId) BY ALL IN ALL OTHER DIMENS
 
 Snapshot \[Last in Period\]: `SELECT MAX(SnapshotId) BY ALL IN ALL OTHER DIMENSIONS EXCEPT SnapshotDate`
 
-Let’s focus on the `BY ALL IN ALL OTHER DIMENSIONS Except` statement. Using this concept it allows you to compute total MAX/MIN of SnapshotId regardless any dimension but with exception of the specific attribute. The exception is an attribute after the `EXCEPT` expression. It defines the attribute that you will slice and dice the metric with.
+Let’s focus on the `BY ALL IN ALL OTHER DIMENSIONS Except` statement. Using this concept it allows you to compute total MAX/MIN of SnapshotId regardless any dimension but with exception of the specific attribute. The exception is an attribute after the `EXCEPT` expression. So the resulting number is not going to be a constant anymore. It will depend on the value of the SnapshotDate. In other words this metric returns the maximum SnapshotId for the SnapshotDate period.
 
-Do you remember the problem with the sales guy John and his last snapshot 25? The Sales Rep constrained the maximum snapshot ID. This is exactly what we need here but with the SnapshotDate attribute. We use the `BY ALL IN ALL OTHER DIMENSIONS EXCEPT` statement to compute the maximum snapshot ID that will be constant for all values of all attributes except the SnapshotDate. The metric computes the maximum snapshot for any specified by the SnapshotDate. If you put the metrics above to a report with the Snapshot Quarter, you will see the first and the last snapshot ID that we have for each quarter. See the report below:
+If you put the metrics above to a report with the Snapshot Quarter, you will see the first and the last snapshot ID that we have for each quarter. See the report below:
 
 <p>
 <center><img src="{{ site.root }}/images/posts/min-max-snapshot.png" alt="Min and Max Snapshot in Quarter"></center>
