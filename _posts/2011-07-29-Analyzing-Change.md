@@ -44,7 +44,7 @@ Snapshot \[Most Recent\]: `SELECT MAX(SnapshotId) BY ALL IN ALL OTHER DIMENSIONS
 
 This metric returns the MAX snapshot regardless any dimensions. The last snapshot (= 118) for all Sales Reps including John, for all regions, for all Products etc. When you add the `BY ALL IN ALL OTHER DIMENSIONS` statement to your metric it returns the grand total (MAX) of all the time and all dimensions. It returns a constant.
 
-The `WITHOUT PARENT FILTER` clause ignores the filters. Imagine that you place the metric into a report that contains the `SalesRep = John` filter. Applying this filter leads to the same troubles that we eliminated with the `BY ALL IN ALL OTHER DIMENSIONS`.
+What is the `WITHOUT PARENT FILTER` clause for? Imagine that you place the metric into a report that contains the `SalesRep = John` filter. Applying this filter would lead to the same troubles that we've eliminated with the `BY ALL IN ALL OTHER DIMENSIONS`. The `WITHOUT PARENT FILTER` clause simply ignores the higher level filters.
 
 **NOTE:** Find out more examples and aggregation concepts in [this documentation](http://developer.gooddata.com/docs/maql.html). 
 
