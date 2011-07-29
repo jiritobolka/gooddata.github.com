@@ -40,9 +40,11 @@ This definition sounds easy enough, however it has certain problems. Imagine tha
 
 Now if we break down the Snapshot \[Most Recent\] metric by the SalesRep, we will see that the metric returns 118 for all Sales Reps except John who gets the Snapshot \[Most Recent\] = 25. This is problem because we would compute our total on the snapshot 25 for John and on the snapshot 118 for everybody else. We need to improve the definition of the Snapshot \[Most Recent\] metric:
 
-Snapshot \[Most Recent\]: `SELECT MAX(SnapshotId) BY ALL IN ALL OTHER DIMENSIONS`
+Snapshot \[Most Recent\]: `SELECT MAX(SnapshotId) BY ALL IN ALL OTHER DIMENSIONS WITHOUT PARENT FILTER`
 
 This metric returns the MAX snapshot regardless any dimensions. The last snapshot (= 118) for all Sales Reps including John, for all regions, for all Products etc. When you add the `BY ALL IN ALL OTHER DIMENSIONS` statement to your metric it returns the grand total (MAX) of all the time and all dimensions. It returns a constant.
+
+The `WITHOUT PARENT FILTER` clause ignores the filters. Imagine that you place the metric into a report that contains the `SalesRep = John` filter. Applying this filter leads to the same troubles that we eliminated with the `BY ALL IN ALL OTHER DIMENSIONS`.
 
 **NOTE:** Find out more examples and aggregation concepts in [this documentation](http://developer.gooddata.com/docs/maql.html). 
 
@@ -62,9 +64,9 @@ Pipeline \[Oldest\]: `SELECT SUM(Amount) WHERE Status = `Open` AND SnapshotId = 
 
 The oldest and the most recent snapshots are great but we want something slightly different. We want to compute the pipeline for the first and the last snapshot in a quarter. We can achieve this by following metric definitions:
 
-Snapshot \[First in Period\]: `SELECT MIN(SnapshotId) BY ALL IN ALL OTHER DIMENSIONS EXCEPT SnapshotDate`
+Snapshot \[First in Period\]: `SELECT MIN(SnapshotId) BY ALL IN ALL OTHER DIMENSIONS EXCEPT SnapshotDate WITHOUT PARENT FILTER`
 
-Snapshot \[Last in Period\]: `SELECT MAX(SnapshotId) BY ALL IN ALL OTHER DIMENSIONS EXCEPT SnapshotDate`
+Snapshot \[Last in Period\]: `SELECT MAX(SnapshotId) BY ALL IN ALL OTHER DIMENSIONS EXCEPT SnapshotDate WITHOUT PARENT FILTER`
 
 Let’s focus on the `BY ALL IN ALL OTHER DIMENSIONS Except` statement. Using this concept it allows you to compute total MAX/MIN of SnapshotId regardless any dimension but with exception of the specific attribute. The exception is an attribute after the `EXCEPT` expression. So the resulting number is not going to be a constant anymore. It will depend on the value of the SnapshotDate. In other words this metric returns the maximum SnapshotId for the SnapshotDate period.
 
