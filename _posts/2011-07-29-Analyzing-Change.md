@@ -58,7 +58,7 @@ Snapshot \[Oldest\]: `SELECT MIN(SnapshotId) BY ALL IN ALL OTHER DIMENSIONS`
 
 and use it in the following pipeline metric:
 
-Pipeline \[Oldest\]: `SELECT SUM(Amount) WHERE Status = `Open` AND SnapshotId = Snapshot [Oldest]`
+Pipeline \[Oldest\]: `SELECT SUM(Amount) WHERE Status = Open AND SnapshotId = Snapshot [Oldest]`
 
 **Measuring Pipeline Change in a Quarter**
 
