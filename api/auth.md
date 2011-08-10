@@ -24,11 +24,19 @@ in response to <i>POST</i> to request to <tt>/gdc/account/login</tt> resource.
 
 This is how would you request the token with <i>curl</i>:
 
-<pre>$ <b>curl --cookie-jar cookies.txt \
+<pre>$ <b>curl --cookie cookies.txt \
+  --data-binary @- \
   --header 'Accept: application/yaml' \
-  --data-urlencode 'USER=</b><i>user@example.com</i><b>' \
-  --data-urlencode 'PASSWORD=</b><i>S3kr1TZ</i><b>' \
-  https://secure.gooddata.com/gdc/account/login</b>
+  --header 'Content-Type: application/json' \
+  https://secure.gooddata.com/gdc/account/login &lt;&lt;EOR
+{
+   "postUserLogin" : {
+      "login" : "</b><i>user@example.com</i><b>",
+      "password" : "</b><i>S3kr1TZ</i><b>",
+      "remember" : "0"
+   }
+}
+EOR</b>
 --- 
 userLogin: 
   profile: /gdc/account/profile/409
