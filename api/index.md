@@ -6,7 +6,15 @@ stub: api
 
 # GoodData API Structure
 
-GoodData platform exposes all of its functionality via the HTTP APIs. We will keep documenting the APIs here. Currently the fastest way how to learn about the GoodData APIs is to inspect the [Java code of the GoodData CL application](http://github.com/gooddata/GoodData-CL). We also recommend you to read the brief overview of the [GoodData CL architecture](/gooddata-cl/architecture.html)
+GoodData platform exposes all of its functionality via the [REST-ful](http://en.wikipedia.org/wiki/Representational_State_Transfer) HTTP APIs.
+When dealing with our APIs, [HTTP/1.1 protocol specification](http://www.w3.org/Protocols/rfc2616/rfc2616.html) should be followed when
+constructing requests and handling reponses. Our resources understand standard HTTP methods and respond with standard HTTP status codes.
+
+Client can negotiate numerous media types with server, including [YAML](http://yaml.org/) (<tt>application/yaml</tt>),
+[JSON](http://www.json.org/) (<tt>application/json</tt>), and [HTML](http://www.w3.org/TR/html/) (<tt>text/html</tt>).
+HTML is useful to [browse the API](https://secure.gooddata.com/gdc) in web browser and JSON is preferred for programmatical use.
+
+We will keep documenting the APIs here. Currently the fastest way how to learn about the GoodData APIs is to inspect the [Java code of the GoodData CL application](http://github.com/gooddata/GoodData-CL). We also recommend you to read the brief overview of the [GoodData CL architecture](/gooddata-cl/architecture.html)
 
 A typical integration scenario looks like this:
 
