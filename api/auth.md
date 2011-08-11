@@ -24,11 +24,19 @@ in response to <i>POST</i> to request to <tt>/gdc/account/login</tt> resource.
 
 This is how would you request the token with <i>curl</i>:
 
-<pre>$ <b>curl --cookie-jar cookies.txt \
+<pre>$ <b>curl --cookie cookies.txt \
+  --data-binary @- \
   --header 'Accept: application/yaml' \
-  --data-urlencode 'USER=</b><i>user@example.com</i><b>' \
-  --data-urlencode 'PASSWORD=</b><i>S3kr1TZ</i><b>' \
-  https://secure.gooddata.com/gdc/account/login</b>
+  --header 'Content-Type: application/json' \
+  https://secure.gooddata.com/gdc/account/login &lt;&lt;EOR
+{
+   "postUserLogin" : {
+      "login" : "</b><i>user@example.com</i><b>",
+      "password" : "</b><i>S3kr1TZ</i><b>",
+      "remember" : "0"
+   }
+}
+EOR</b>
 --- 
 userLogin: 
   profile: /gdc/account/profile/409
@@ -84,9 +92,18 @@ Note that once the Temporary token expires you'll get a response with status cod
 In that case just need to re-request it by visiting <tt>/gdc/account/token</tt> and
 repeat the failing request.
 
-<pre>$ <b>curl --cookie cookies.txt \
+The <tt>WWW-Authenticate</tt> header specifies that you'll expected to authenticate
+via GoodData mechanism, indicating whether you need to refresh a Temporary Token
+(<tt>cookie=GDCAuthTT</tt>), or you need to log in get a new Super-secure Token
+(<tt>cookie=GDCAuthSST</tt>). Add <tt>-v</tt> option to <tt>curl</tt> to see the
+headers:
+
+<pre>$ <b>curl -v --cookie cookies.txt \
   --header 'Accept: application/yaml' \
   https://secure.gooddata.com/gdc/md</b>
+...
+&lt WWW-Authenticate: GoodData cookie=GDCAuthTT
+...
 &lt;!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN"&gt;
 &lt;html&gt;&lt;head&gt;
 &lt;title&gt;401 Authorization Required&lt;/title&gt;
