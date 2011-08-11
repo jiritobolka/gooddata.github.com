@@ -1,5 +1,5 @@
 ---
-title: Modeling M:N relationships in GoodData
+title: Modeling Many-to-Many relationships in GoodData
 excerpt: How-to guide to constructing M:N relationships in model in GoodData and examples on how to use this in metrics using MAQL with enforced aggregations
 layout: post
 ---

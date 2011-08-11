@@ -42,9 +42,12 @@ Correspondingly, we need to add one more column definition to the `schema.xml` f
   <name>statussort</name>
   <title>Status Sort</title>
   <ldmType>LABEL</ldmType>
+  <dataType>INT</dataType>
   <reference>status</reference>
 </column>
 {% endhighlight %}
+
+**Note:** To set up sorting correctly you need to specify INT datatype for the label. If you don't do that sorting will be based on alphabetic principles. (12 comes before 2 and so on...)
 
 As always, when modifying the schema XML, we now need to project these changes into our project. We can create a new project from scratch, but sometimes that's not practical. Or we can use the little known [`GenerateUpdateMaql` command](http://developer.gooddata.com/gooddata-cl/cli-commands.html#logical_model_management_commands):
 
