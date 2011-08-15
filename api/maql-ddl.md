@@ -77,7 +77,28 @@ Similar to the core MAQL, DDL syntax is simple and reminiscent of SQL. At it&#82
 <pre class="highlight"><code class="maql"><span class="k">ALTER</span> <span class="k">ATTRIBUTE</span> <span class="nv">{attr.quotes.symbol}</span> <span class="k">ADD</span> <span class="k">LABELS</span> <span class="nv">{attr.quotes.company}</span> <span class="k">VISUAL</span><span class="p">(</span><span class="k">TITLE</span> <span class="s">&quot;Company&quot;</span><span class="p">)</span>
     <span class="k">AS</span> <span class="nv dataColumn">{d_quotes_symbol.nm_company}</span><span class="p">;</span></code></pre>
 
+<h3 id="default_label">DEFAULT LABEL</h3>
 
+<p>If you have more <strong>labels</strong> assigned to one attribute, you can specify which one is the <strong>default</strong>. When you create an attribute with more labels, the first label from a list is assigned as default. Create attribute syntax does not provide any option allowing explicit specification of default label. <strong>Alter</strong> attribute syntax is the only option how to change the default label.</p>
+
+<pre class="highlight"><code class="maql"><span class="k">CREATE</span> <span class="k">ATTRIBUTE</span> <span class="nv">{attr.quotes.attribute}</span> <span class="k">AS LABELS</span> <span class="nv">{attr.quotes.label1}</span><span class="k"> VISUAL</span><span class="p">(</span><span class="k">TITLE</span> <span class="s">&quot;Label 1&quot;</span><span class="p">)</span>, <span class="nv"> {attr.quotes.label2};</span></code></pre>
+<pre class="highlight"><code class="maql"><span class="k">ALTER</span> <span class="k">ATTRIBUTE</span> <span class="nv">{attr.quotes.attribute}</span> <span class="k">DEFAULT</span> <span class="k">LABEL</span> <span class="nv">{attr.quotes.label2};</span></code></pre>
+
+<h3 id="hyperlink_label">HYPERLINK LABEL</h3>
+
+<p>By following code, you can add hyperlink to a label. That means the label will be shown <strong>with a link</strong> in reports.</p>
+
+<pre class="highlight"><code class="maql"><span class="k">CREATE</span> <span class="k">ATTRIBUTE</span> <span class="nv">{attr.quotes.attribute}</span> <span class="k">AS LABELS</span> <span class="nv">{attr.quotes.label1}</span><span class="k"> VISUAL</span><span class="p">(</span><span class="k">TITLE</span> <span class="s">&quot;Hyperlink&quot;</span><span class="p">)</span> <span class="k">HYPERLINK;</span></code></pre>
+
+<pre class="highlight"><code class="maql"><span class="k">ALTER</span> <span class="k">ATTRIBUTE</span> <span class="nv">{attr.quotes.attribute}</span> <span class="k">DEFAULT</span> <span class="k">ALTER LABELS</span> <span class="nv">{attr.quotes.label1}</span> <span class="k">HYPERLINK;</span></code></pre>
+
+<h3 id="hyperlink_label">SORTING BY LABEL</h3>
+
+<p>Attribute can be optionally sorted by label. Using following code, the label is created and ordered. You have to specify the ordering type - ASC/DESC.</p>
+
+<pre class="highlight"><code class="maql"><span class="k">CREATE</span> <span class="k">ATTRIBUTE</span> <span class="nv">{attr.quotes.attribute}</span> <span class="k">AS LABELS</span> <span class="nv">{attr.quotes.label1}</span><span class="k"> VISUAL</span><span class="p">(</span><span class="k">TITLE</span> <span class="s">&quot;Label 1&quot;</span><span class="p">)</span> <span class="k">ORDER</span> <span class="nv">{attr.quotes.label1}</span><span class="k"> ASC;</span></code></pre>
+
+<pre class="highlight"><code class="maql"><span class="k">ALTER</span> <span class="k">ATTRIBUTE</span> <span class="nv">{attr.quotes.attribute}</span> <span class="k">ORDER BY</span> <span class="nv">{attr.quotes.label1}</span> <span class="k">DESC;</span></code></pre>
 
 <h2 id="fact">Fact</h2>
 
