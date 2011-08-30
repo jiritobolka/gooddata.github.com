@@ -1,6 +1,6 @@
 ---
 title: Incremental Data Loading
-excerpt: Incremental data loading and connection points
+excerpt: The article describes the Incremental Data Loading and the Connection Point usage
 layout: post
 ---
 
