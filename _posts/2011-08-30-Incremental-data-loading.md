@@ -70,7 +70,7 @@ For example, yesterday we used the Google Analytics API to get the page views an
 
 Now, by adding the unique connection point to the records, our data load will look something like this:
 
-ea3d273d6296684da21d3dc2aa82d0b7,2011-08-10,Google,500,30  
+ea3d273d6296684da21d3dc2aa82d0b7,2011-08-10,Google,500,30  
 f4583c4214d22677d991e25d041336ea,2011-08-10,Bing,50,15
 
 In this case, the `CONNECTION_POINT` is MD5 hash which is computed from the attributes and its values. It can be easily done with the `IDENTITY` `<transformation>` element. If you add the `IDENTITY` transformation to the dataset, the column that is transformed is automatically filled with the MD5 hash of every non-fact column (attributes, labels etc.). The transformation column is added to the dataset and uploaded regularly. See the definition of the transformation column on the example below.
@@ -93,12 +93,12 @@ In this case, the `CONNECTION_POINT` is MD5 hash which is computed from the attr
 
 The next day, we use the same query and it returns larger values which is normal because yesterday’s data may not have been completed. The result will be:
 
-2011-08-10,Google,509,33  
+2011-08-10,Google,509,33  
 2011-08-10,Bing,52,19
 
 When we add our hash based `CONNECTION_POINT` to the data once again, we will get:
 
-ea3d273d6296684da21d3dc2aa82d0b7,2011-08-10,Google,509,33  
+ea3d273d6296684da21d3dc2aa82d0b7,2011-08-10,Google,509,33  
 f4583c4214d22677d991e25d041336ea,2011-08-10,Bing,52,19
 
 Finally, we'll use the incremental data load to update yesterday's incomplete data. This is very useful if you need to replace incomplete data with complete data.
