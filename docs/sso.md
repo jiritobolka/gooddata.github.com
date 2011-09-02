@@ -12,7 +12,7 @@ GoodData SSO is currently available on a per-request basis with individual partn
 
 ## Motivation / Example
 
-Acme Corp. runs an online application for their users. They would like to expose GoodData dashboards to their customers. They have already setup a data synchronization with GoodData using [GoodData CL]({{ site.root }}/gooddata-cl/) and embedded dashboard IFRAME code into their website. However, their users would see a GoodData login screen (even after loggin into Acme application). Acme would like to enable their customers to view GoodData dashboard transparently, without the need for a second login, using the login information of the Acme application.
+Acme Corp. runs an online application for their users. They would like to expose GoodData dashboards to their customers. They have already setup a data synchronization with GoodData using [GoodData CL]({{ site.root }}/gooddata-cl/) and embedded dashboard IFRAME code into their website. However, their users would see a GoodData login screen (even after login into Acme application). Acme would like to enable their customers to view GoodData dashboard transparently, without the need for a second login, using the login information of the Acme application.
 
 ## Implementation Timeline
 
@@ -45,8 +45,11 @@ Acme Corp. runs an online application for their users. They would like to expose
    • the `email` corresponds to a user account set up in GoodData with SSO permissions (done by GoodData, see Implementation Timeline, step 5)  
    • the `validity` is a date in UTC timezone (in [UNIX timestamp](http://en.wikipedia.org/wiki/Unix_time) format) when this authentication should expire. It should always be > now (perhaps by at least 10minutes to allow for network delays and server clock variations)
 
-4. Sign this string using PGP with Partner private key, make sure **not** to use the `--clearsign` option
+4. Sign this string using PGP with Partner private key, make sure **not** to use the `--clearsign` option:
+<pre><code>gpg --armor -u user@domain.com --output signed.txt --sign json.txt</code></pre>
 5. Encrypt the result from step 4 with GoodData public key
+<pre><code>gpg --armor --output enc.txt --encrypt --recipient test@gooddata.com signed.txt</code></pre>
+
 6. [URL-encode](http://meyerweb.com/eric/tools/dencoder/) the result from step 5
 
 The above steps are summarized in this pseudo-code:

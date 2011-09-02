@@ -37,6 +37,6 @@ Below is a table giving you a rough idea on best practices. If you fall outside 
   </tr>
   <tr>
     <th>fact size</th>
-    <td>DECIMAL(12,2) by default (-10^10..10^10, 2 decimal places)<br><a href="{{site.root}}/api/maql-ddl.html#performance">extensible</a> to DECIMAL(15,6) (-10^15..10^15, 6 decimal places )</td>
+    <td>DECIMAL(12,2) by default (-10^10..10^10, 2 decimal places)<br><a href="{{site.root}}/api/maql-ddl.html#performance">extensible</a> to DECIMAL(15,6) (-10^9..10^9, 6 decimal places )</td>
   </tr>
 </table>
