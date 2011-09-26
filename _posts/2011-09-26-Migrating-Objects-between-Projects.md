@@ -52,6 +52,8 @@ We have several options how to export reports (or dashboards, metrics) from the 
 `UseProject(fileName="...");`  
 `ExportMetadataObjects(tokenFile="...", objectIDs="...");`
 
+**Note:** This functionality is available in the CL Tool 1.2.40 or higher.
+
 This command exports metadata objects with all of its dependencies. The `tokenFile` is a file where the import token will be stored (you'll need it!). In `objectIDs` you will paste the comma separated list of the metadata object IDs. The Object ID is a number which is located on the end of i.e. report URL, as you will see below.
 
 Remember that before the `ExportMetadataObjects` you must use the `UseProject` or the `OpenProject` command to open the source/master project.
