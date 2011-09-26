@@ -35,4 +35,14 @@ CreateProject(name="Clone");
 ImportProject(tokenFile="importToken.txt");
 </code></pre>
 
-The logged user must be associated with the _admin_ role to be able to invoke the API.
+The logged user must be associated with the _admin_ role to be able to invoke the API. 
+
+## Cloning without the CL Tool
+
+If you are not sure in using the CL Tool, you can do the same thing using our so called grey pages. Go to the project maintenance section that is located on the following url:
+
+`https://secure.gooddata.com/gdc/md/<project-id>/maintenance`
+
+Here you are able to export the project. The system will generate a unique token that you will use lately to import project (store that token somewhere!). You have to create new, empty project and go to the same maintenance grey pages section, but this time choose import. You need to paste that unique token and the exported project will be imported to the new empty project. 
+
+You can choose from same options as you can using the CL Tool.
