@@ -109,6 +109,9 @@ headers:
 &lt;title&gt;401 Authorization Required&lt;/title&gt;
 ...</pre>
 
+## User Agents
+
+User Agent header must be the same for the SuperSecure token retrieval and the Temporary token refresh.
 
 ## Implementation
 
