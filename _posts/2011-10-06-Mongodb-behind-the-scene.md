@@ -1,5 +1,5 @@
 ---
-title: MongoDB Behind the Scene
+title: MongoDB Behind the Scenes
 excerpt: Read more about why and how we use the Mongo DB.
 layout: post
 ---
