@@ -14,9 +14,8 @@ There are three main entities in the Notification domain model - _ChannelConfigu
 
 <center><img src="{{ site.root }}/images/posts/mongo-1.png" alt="Reports"></center>
 
-We had been facing the issue of how to persist these entities. In the GoodData platform we keep most of data in the good old relational database (RDBMS), but we are all aware of the constraints. One year ago, we did a proof of concept for storing the data out of the relational database because the characteristics of the data. 
+We had been facing the issue of how to persist these entities. In the GoodData platform we keep most of data in the good old relational database (RDBMS), but we are all aware of the constraints. One year ago, we did a proof of concept for storing the data out of the relational database because the characteristics of the data didn't fit into the relational model. Let me explain it in the Notifications model example.
 
-Data didn't fit into the relational model. Let me explain it in the Notifications model example.
 We mentioned that the Notifications consisted of three entities. If we had chosen a relational database for storing them, we would have probably ended up with a normalized schema as you can see in the next picture.
 
 <center><img src="{{ site.root }}/images/posts/mongo-2.png" alt="Reports"></center>
