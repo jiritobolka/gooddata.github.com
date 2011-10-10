@@ -60,7 +60,7 @@ Remember that before the `ExportMetadataObjects` you must use the `UseProject` o
 
 If you are not familiar with the CL tool, choose the second option. You will need to go to the grey pages partial metadata export section which is located in the following url:
 
-`https://secure.gooddata.com/gdc/md/<project-id>/maintenance/partial-md-export`
+`https://secure.gooddata.com/gdc/md/<project-id>/maintenance/partialmdexport`
 
 Here you can select the metadata objects that you would like to export based on it's uri.
 
