@@ -106,7 +106,7 @@ and we will set it up once again by POSTing following payload (sure not exactly 
       ],
       "condition":{
          "condition":{
-            "expression":"f:executeMetric('/gdc/md/ChatterDemo/obj/130001729 < 16"
+            "expression":"f:executeMetric('/gdc/md/ChatterDemo/obj/130001729 < 16)"
          }
       },
       "message":{
