@@ -44,7 +44,7 @@ The EventStore creates a special stream for every field. Every time you start lo
 
 As you can see, the size of your data warehouse will be increasing much slower, than if you use the classic storage.
 
-The EventStore will enables you to to load the data for a specific time period and with a specific granularity. You will be able to load for example all daily snapshots between beginning of the Quarter and Today. You can create another project and load a monthly snapshots from the EventStore here. As a result today, you will get a CSV file that you can upload to the GoodData Platform, create metrics, prepare reports and dashboards.
+The EventStore will enable you to to load the data for a specific time period and with a specific granularity. You will be able to load for example all daily snapshots between beginning of the Quarter and Today. You can create another project and load a monthly snapshots from the EventStore here. As a result today, you will get a CSV file that you can upload to the GoodData Platform, create metrics, prepare reports and dashboards.
 
 ## More Features to Come
 
