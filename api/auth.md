@@ -24,7 +24,7 @@ in response to <i>POST</i> to request to <tt>/gdc/account/login</tt> resource.
 
 This is how would you request the token with <i>curl</i>:
 
-<pre>$ <b>curl --cookie cookies.txt \
+<pre>$ <b>curl --cookie-jar cookies.txt \
   --data-binary @- \
   --header 'Accept: application/yaml' \
   --header 'Content-Type: application/json' \
