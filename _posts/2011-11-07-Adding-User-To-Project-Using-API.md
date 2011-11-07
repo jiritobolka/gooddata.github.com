@@ -92,7 +92,7 @@ Nice! We've just created new user in our domain!
 
 ## Add user to a project
 
-Let's continue with our story, this is not the end. Remember what we want to do? Sure, we would like to add user to a specific project. How to do it? Use POST `.json` to following resource:
+Let's continue with our story, this is not the end. Remember what we want to do? Sure, we would like to add user to a specific project. How do we do it? Use POST `.json` to following resource:
 
 <p>
 <center><img src="{{ site.root }}/images/posts/add-user-to-project.png" alt="Add user to project"></center>
@@ -121,7 +121,7 @@ If the API gives you a Header 200 respond, that’s a reason to smile because yo
 <center><img src="{{ site.root }}/images/posts/user-provisioned.png" alt="Add user to domain"></center>
 </p>
 
-One more thing. If you use status: DISABLED in user provisioning `json` file (shown above), you are able to disable the user from the project.
+One more thing. If you use `status: DISABLED` in user provisioning `json` file (shown above), you are able to disable the user from the project.
 
 Let me know what you think! Best Regards,
 
