@@ -43,6 +43,8 @@ As you can see below, the HR Demo Copy is empty.
 <center><img src="{{ site.root }}/images/posts/migrating-metadata/4.png" alt="New project"></center>
 </p>
 
+**Note:** You have to be logged in as one user when you do export/import. It is not possible to export metadata, send token to other user to import metadata. 
+
 ## Exporting objects
 
 Our report is prepared and now we need to export it from the HR project.
@@ -116,6 +118,6 @@ After submitting, you'll see the link that takes you to the page with the import
 <center><img src="{{ site.root }}/images/posts/migrating-metadata/9.png" alt="Export"></center>
 </p>
 
-As you can see the report was successfully migrated from one project to another.
+As you can see the report was successfully migrated from one project to another. Remember that export/import should be done using one user account.
 
 So, that’s the selected object migration. Isn’t it easy?! Do you like it? Let us know what you think!
