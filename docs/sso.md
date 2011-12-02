@@ -22,7 +22,7 @@ Acme Corp. runs an online application for their users. They would like to expose
 3. Partner sends a list of email addresses of accounts to be enabled for SSO authentication.  
 *Note:* these must be new account email addresses, pre-existing accounts currently cannot be converted to SSO.
 6. GoodData deploys the new SSO keys and accounts to production environment
-7. GoodData sends partner production public key 
+7. GoodData sends partner production public key (you can also <a href="gooddata-sso.pub">download it here</a>) 
 8. Partner sets up the keys and his environment
 
 ## Implementation Details
