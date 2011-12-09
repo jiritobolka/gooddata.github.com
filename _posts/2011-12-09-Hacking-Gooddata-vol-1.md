@@ -21,7 +21,7 @@ The logic is quite complicated, so we let GoodData take care of that :-)
 So, please allow us to share with you how we managed to integrate an application with the extraneous GoodData BI platform.  
 It's a bit tricky, but just follow the steps in this article, and you can accomplish the same thing quite easily.
 
-Firstly, for the purposes of this article, we need to assume that you already have a GoodData project loaded with data, and that you know the IDs (URIs) of the GoodData reports that you want to use.  Also note that you must be authenticated prior to each API call as described here http://developer.gooddata.com/api/auth.html.
+Firstly, for the purposes of this article, we need to assume that you already have a GoodData project loaded with data, and that you know the IDs (URIs) of the GoodData reports that you want to use.  Also note that you must be authenticated prior to each API call as described [here](http://developer.gooddata.com/api/auth.html).
 
 So, to get the report results from GoodData to our external application is a two step process.
 
