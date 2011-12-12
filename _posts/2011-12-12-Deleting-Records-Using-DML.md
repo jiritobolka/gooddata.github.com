@@ -76,5 +76,5 @@ The validation is located in the grey pages of your projects which you can find 
 
 Let us know how it works! And for more information about MAQL, download our new Advanced MAQL Reference Guide
 
-<center><a href="{{ site.root }}/docs/Adv_MAQL_Ref_Guide.pdf" class="greenButton" onClick="_gaq.push(['_trackEvent', 'PDF', 'Download', 'MAQL Reference Guide']);">Download the MAQL Reference Guide</a></center>
+<center><a href="{{ site.root }}/docs/reference-guide/Adv_MAQL_Ref_Guide.pdf" class="greenButton" onClick="_gaq.push(['_trackEvent', 'PDF', 'Download', 'MAQL Reference Guide']);">Download the MAQL Reference Guide</a></center>
 

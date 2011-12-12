@@ -20,6 +20,6 @@ We have something special for you today. For the last few weeks, we’d been pre
 
 It covers the whole MAQL topic, and the complete guide has around 30 pages. As of today, you can download it and have it at your disposal while developing your Analytics App. The Reference Guide is well structured with tons of useful examples along with highlighted syntax.
 
-<center><a href="{{ site.root }}/docs/Adv_MAQL_Ref_Guide.pdf" class="greenButton" onClick="_gaq.push(['_trackEvent', 'PDF', 'Download', 'MAQL Reference Guide']);">Download the MAQL Reference Guide</a></center>
+<center><a href="{{ site.root }}/docs/reference-guide/Adv_MAQL_Ref_Guide.pdf" class="greenButton" onClick="_gaq.push(['_trackEvent', 'PDF', 'Download', 'MAQL Reference Guide']);">Download the MAQL Reference Guide</a></center>
 
 Let us know what you think! And feel free to share it!
