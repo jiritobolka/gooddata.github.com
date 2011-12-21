@@ -6,7 +6,7 @@ stub: docs-maql-metrics
 
 # Introduction to Metrics and MAQL
 
-MAQL (Multi-Dimensional Analytical Query Language) is our flexible tool for describing metrics in GoodData. Each metric consists of two main parts: aggregation and (optionally) filters.
+The Multi-Dimension Analytical Query Language (MAQL) is our flexible tool for describing metrics in GoodData. Each metric consists of two main parts: aggregation and (optionally) filters.
 
 ##Aggregation
 

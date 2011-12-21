@@ -80,7 +80,7 @@ Following JSON payload is usage example, you can choose from what do you want to
 
 ##Response
 
-201 Created HTT Status + URI of created Project:
+201 Created HTTP Status + URI of created Project:
 
 <pre>
 {"uri" : "/gdc/md/PROJECT_ID/validate/TASK_ID"}
