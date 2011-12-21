@@ -12,9 +12,9 @@ constructing requests and handling reponses. Our resources understand standard H
 
 Client can negotiate numerous media types with server, including [YAML](http://yaml.org/) (<tt>application/yaml</tt>),
 [JSON](http://www.json.org/) (<tt>application/json</tt>), and [HTML](http://www.w3.org/TR/html/) (<tt>text/html</tt>).
-HTML is useful to [browse the API](https://secure.gooddata.com/gdc) in web browser and JSON is preferred for programmatical use.
+HTML is useful to [browse the API](https://secure.gooddata.com/gdc) in web browser and JSON is recommended and preferred for programmatical use.
 
-We will keep documenting the APIs here. Currently the fastest way how to learn about the GoodData APIs is to inspect the [Java code of the GoodData CL application](http://github.com/gooddata/GoodData-CL). We also recommend you to read the brief overview of the [GoodData CL architecture](/gooddata-cl/architecture.html)
+We will keep documenting the APIs here. If you want to use the REST API in your custom Apps, the best way how to start is to inspect our API resources. Anyway, you can also use GoodData CL Tool which is Java wrapper that helps you with using GoodData API.
 
 A typical integration scenario looks like this:
 
@@ -56,5 +56,5 @@ on a dedicated [MAQL DDL](maql-ddl.html) page.
 ## Project Provisioning API
 The project provisioning API takes care of creating and dropping new projects. Please note that the amount of projects that you can create in the GoodData platform is limited.
 
-Consult a more depth-in [Provisioning API](projects.html) documentation learn more about how to manage GoodData projects,
+Consult a more depth-in [Project Provisioning API](projects-create.html) documentation learn more about how to manage GoodData projects,
 accompanied with practical examples.

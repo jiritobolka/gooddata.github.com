@@ -8,14 +8,24 @@ section: documentation
         <li><a href="{{ site.root }}/api"{% if page.stub == 'api' %} class="active"{% endif %}>API<span></span></a>
             <ul>
                 <li><a href="{{ site.root }}/api/auth.html"{% if page.stub == 'api-auth' %} class="active"{% endif %}>Authentication<span></span></a></li>
-                <li><a href="{{ site.root }}/api/projects.html"{% if page.stub == 'api-projects' %} class="active"{% endif %}>Project Provisioning<span></span></a></li>
+                <!--li><a href="{{ site.root }}/api/projects.html"{% if page.stub == 'api-projects' %} class="active"{% endif %}>Project Provisioning<span></span></a></li-->
+<li><a href="{{ site.root }}/api/projects-create.html"{% if page.stub == 'api-projects-create' %} class="active"{% endif %}>Project<span></span></a></li>
+<li><a href="{{ site.root }}/api/user.html"{% if page.stub == 'api-user' %} class="active"{% endif %}>User<span></span></a></li>
+<li><a href="{{ site.root }}/api/manage-ldm.html"{% if page.stub == 'api-ldm' %} class="active"{% endif %}>Data Model<span></span></a></li>
+<li><a href="{{ site.root }}/api/notifications.html"{% if page.stub == 'api-notifications' %} class="active"{% endif %}>Notifications<span></span></a></li>
+<li><a href="{{ site.root }}/api/report.html"{% if page.stub == 'report' %} class="active"{% endif %}>Report<span></span></a></li>
+<li><a href="{{ site.root }}/api/metadata.html"{% if page.stub == 'metadata' %} class="active"{% endif %}>Metadata<span></span></a></li>
                 <!--li><a href="{{ site.root }}/api/upload.html"{% if page.stub == 'api-upload' %} class="active"{% endif %}>Data Upload</a></li-->
-                <li><a href="{{ site.root }}/api/model.html"{% if page.stub == 'model' %} class="active"{% endif %}>Data Modelling<span></span></a></li>
-                <li><a href="{{ site.root }}/api/maql-ddl.html"{% if page.stub == 'api-maql-ddl' %} class="active"{% endif %}>MAQL &mdash; Data Model<span></span></a></li>
+                <!--li><a href="{{ site.root }}/api/model.html"{% if page.stub == 'model' %} class="active"{% endif %}>Data Modeling<span></span></a></li-->
+                
+            </ul>
+
+     <li><a href="{{ site.root }}/api/maql-ddl.html"{% if page.stub == 'api-maql-ddl' %} class="active"{% endif %}>MAQL<span></span></a>
+             <ul>
                 <li><a href="{{ site.root }}/docs/maql.html"{% if page.stub == 'docs-maql-metrics' %} class="active"{% endif %}>MAQL &mdash; Metrics<span></span></a></li>
                 <li><a href="{{ site.root }}/docs/maql-refguide.html"{% if page.stub == 'docs-maql-refguide' %} class="active"{% endif %}>MAQL &mdash; Reference Guide<span></span></a></li>
             </ul>
-        </li>
+
         <li><a href="{{ site.root }}/gooddata-cl"{% if page.stub == 'gooddata-cl' %} class="active"{% endif %}>GoodData CL<span></span></a>
             <ul>
                 <li><a href="{{ site.root }}/gooddata-cl/install.html"{% if page.stub == 'gooddata-cl-install' %} class="active"{% endif %}>Installation<span></span></a></li>

@@ -1,5 +1,5 @@
 ---
-title: Data modelling in GoodData
+title: Data modeling in GoodData
 layout: documentation
 breadcrumbs:
 - name: API Documentation

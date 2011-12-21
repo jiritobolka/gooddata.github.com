@@ -12,7 +12,7 @@ stub: api-auth
 The GoodData authentication API provides access to the GoodData's token-based authentication.
 It uses two distinct tokens to authenticate a user. The first one, called <i>Super-secure token</i>
 is valid for whole session while the second (so called <i>Temporary token</i>) has a more limited
-lifespan, typically 30 seconds.
+lifespan.
 
 Typically, you only use Temporary token to access resources and refresh them using Super-secure
 token once it expires.
