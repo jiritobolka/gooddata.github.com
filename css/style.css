@@ -342,6 +342,7 @@ html.boxshadow #navigation {
 }
 #contain-wrap ul li { list-style-type: disc; }
 #contain-wrap ol li { list-style-type: decimal; }
+#disqus_thread ul li { list-style-type: none; }
 #contain-wrap img { border: 4px solid #dddddd; }
 #contain-wrap img.noborder { border: none; position: absolute; top: 50px; right: 50px;}
 #contain-wrap .greenButton {
