@@ -6,7 +6,7 @@ stub: api-maql-ddl
 
 <h1 id="modeling_data_with_maql_ddl">Modeling Data with MAQL DDL</h1>
 
-The Multi-Dimension Analytical Query Language (MAQL) is a simple yet powerful query language that provides an underpinning of GoodData&#8217;s reporting capabilities. It&#8217;s extension <strong>MAQL DDL</strong> (MAQL Data Definition Language) is used for building and adapting a data model.</p>
+<p>The Multi-Dimension Analytical Query Language (MAQL) is a simple yet powerful query language that provides an underpinning of GoodData&#8217;s reporting capabilities. It&#8217;s extension <strong>MAQL DDL</strong> (MAQL Data Definition Language) is used for building and adapting a data model.</p>
 
 <h2 id="getting_started">Getting Started</h2>
 
