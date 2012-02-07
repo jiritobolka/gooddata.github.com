@@ -35,9 +35,7 @@ The ongoing data loading scripts usually:
 2. Initialize your data source Connector using a `Use<Source-Type>` command. The `Use<Source-Type>` command requires the XML config file and a specific parameters that define the data source data or query (e.g. a SQL query).
 3. `TransferData` command that transforms, packages, and transfers the data.
 
-
 ---------------------------------------------------------------------------
-
 
 Commands Reference
 ==================
