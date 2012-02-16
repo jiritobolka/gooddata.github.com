@@ -43,7 +43,7 @@
                 </li><li>
                     <a href="{{ site.root }}/blog/" title="Blog"{% if page.section == 'blog' %} class="active"{% endif %}>Blog</a> 
                 </li><li>
-                    <a href="http://support.gooddata.com/forums/176660-developer-forum" title="Developer Forum">Forum</a> 
+                    <a href="{{ site.root }}/forum.html" title="Developer Forum" {% if page.section == 'forum' %} class="active"{% endif %}>Forum</a> 
                 </li>
             </ul>
         </div>
@@ -57,7 +57,7 @@
     </div>
 
     <footer>
-        © 2010 <strong>GoodData Corporation</strong>. All rights reserved. <a href="http://www.gooddata.com/about/contact-us/">Contact</a> | <a href="http://www.gooddata.com/privacy-policy/">Privacy Policy</a>
+        © 2010 <strong>GoodData Corporation</strong>. All rights reserved. <a href="http://www.gooddata.com/about/contact-us/">Contact</a> | <a href="http://www.gooddata.com/privacy-policy/">Privacy Policy</a> | <a href="{{ site.root }}/terms-of-use.html">Terms of Service</a>
     </footer>
     
     <script type="text/javascript">
