@@ -61,7 +61,7 @@ puts "Reports that took more than 5 secs to compute (#{long_running_reports.coun
 long_running_reports.each {|r| puts r.title}  
 {% endhighlight %}
 
-As a result, you can see a list of reports that took longer than 5 seconds to compute. For sure you don't need to print the names you can do whatever you want and use reports in your application.
+As a result, you can see a list of reports that took longer than 5 seconds to compute. For sure you don't need to print the names you can do whatever you want and use reports in your application. Do you want to try it? [Download](https://gist.github.com/1565384) the script.
 
 Check the example result:
 
