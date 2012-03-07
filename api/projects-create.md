@@ -39,6 +39,7 @@ Following JSON payload should be sent to create a new project:
 "meta" : {
 "title" : "Test Project",
 "summary" : "Testing Project",
+"projectTemplate" : "TEMPLATE URI"
 } }
 }
 </pre>
