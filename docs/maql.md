@@ -151,4 +151,4 @@ Original MAQL pre-pygmentize:
 
 More documentation on MAQL metrics including filtering, time-based floating filters, year-to-date metrics etc. can be found in our [MAQL section](https://secure.gooddata.com/docs/html/reference.guide.maql.html) of [GoodData reference guide](https://secure.gooddata.com/docs/html/reference.guide.html). 
 
-Try also our [Advanced MAQL Reference Guide](http://developer.gooddata.com/docs/advanced-maql-reference.pdf) in PDF!
+Try also our [Advanced MAQL Reference Guide](http://developer.gooddata.com/docs/reference-guide/advanced-maql-reference.pdf) in PDF!
