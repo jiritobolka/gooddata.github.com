@@ -45,12 +45,12 @@ The Dashboard macro in URL is replaced by the current project hash (Project ID /
 
 Now let’s push this a little bit further … Imagine that you have multiple dashboards and tabs, each of which utilizes only a segment of the data. It is important to show warnings only if really necessary.  Using Dashboard macros we can limit the scope of the data being checked and thus display only relevant warnings. It can even go all the way down to a report level and give the confidence that a particular report has all the data required to show correct results.
 
-By now you can probably imagine another use cases. And if not, Keboola Objects are growing in both numbers and their capabilities.
+By now you can probably imagine other use cases. And if not, Keboola Objects are growing in both numbers and their capabilities.
 
 GoodData is great to analyze and display your data. Don’t be afraid of keeping your data in the cloud. [Keboola Connection tool](http://www.keboola.com/connection) and Keboola Objects give you powerful handle in the GoodData ecosystem. 
 
 Good Luck!
-[@Keboola](http://www.keboola.com)  
+[@Keboola](https://twitter.com/#!/keboola)  
 <p>
 <img src="{{ site.root }}/images/posts/KB_keboolaAcademy.png" alt="Keboola Academy" style="border: none; position: absolute; top: 50px; right: 50px;">
 </p>
