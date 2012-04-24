@@ -44,7 +44,7 @@ Acme Corp. runs an online application for their users. They would like to expose
         {"email": "user@domain.com","validity": 123456789}
 
    • the `email` corresponds to a user account set up in GoodData with SSO permissions (done by GoodData, see Implementation Timeline, step 5)  
-   • the `validity` is a date in UTC timezone (in [UNIX timestamp](http://en.wikipedia.org/wiki/Unix_time) format) when this authentication should expire. It should always be > now (perhaps by at least 10 minutes to allow for network delays and server clock variations)
+   • the `validity` is a date in UTC timezone (in UNIX timestamp format, **INTEGER**) when this authentication should expire. It should always be > now (perhaps by at least 10 minutes to allow for network delays and server clock variations). 
 
 5. Sign this string using PGP with Partner private key, make sure **not** to use the `--clearsign` option:
 <pre><code>gpg --armor -u user@domain.com --output signed.txt --sign json.txt</code></pre>
