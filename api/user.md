@@ -102,6 +102,58 @@ Following JSON payload should be sent to create a new project:
 
 -----
 
+# Disable / Enable User in Project 
+<br />
+## Description
+
+Resource for Disabling or Enabling Users in given Project.
+
+##Request
+
+HTTP Request
+
+**POST**  
+<pre>https://secure.gooddata.com/gdc/projects/PROJECT_ID/users</pre>
+
+_HTTP Headers_
+
+Content-Type: application/json  
+Accept: application/json
+
+##Request Body
+
+Following JSON payload should be sent to create a new project:
+
+<pre>
+{
+    "users": [
+        {
+            "user": {
+                "content": {
+                    "status": "DISABLED"
+                },
+                "links": {
+                    "self": "/gdc/account/profile/USER-ID"
+                }
+            }
+        }
+    ]
+}
+</pre>
+
+##Response
+
+200 OK HTTP Status + following JSON formatted result:  
+
+<pre>
+{"projectUsersUpdateResult":{
+    "successful":["/gdc/account/profile/PROFILE_ID"],
+    "failed":[]}
+}
+</pre>
+
+----- 
+
 # List all Domain Users
 <br />
 ## Description
@@ -155,3 +207,4 @@ Empty
 ##Response
 
 200 OK HTTP Status
+
