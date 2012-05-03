@@ -65,6 +65,23 @@ To create Twillio as a channel use following JSON payload:
 }
 </pre>
 
+To create Email as a channel use following JSON payload:
+
+<pre>
+{
+    "channelConfiguration": {
+        "configuration": {
+            "emailConfiguration": {
+                "to": "user@email.com"
+            }
+        },
+        "meta": {
+            "title": "Email Channel"
+        }
+    }
+}
+</pre>
+
 ##Response
 
 201 Created HTTP Status + URI + description of created channel configuration:

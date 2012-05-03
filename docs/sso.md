@@ -87,7 +87,7 @@ the `validity` is a date in UTC timezone (in UNIX timestamp format, must be **IN
 
 <pre><code>gpg --armor -u user@domain.com --output signed.txt --sign json.txt</code></pre>
 
-3) Encrypt the result from step 3 with GoodData public key
+3) Encrypt the result from step 3 with GoodData public key (you can download it [here](http://developer.gooddata.com/docs/gooddata-sso.pub))
 
 <pre><code>gpg --armor --output enc.txt --encrypt --recipient test@gooddata.com signed.txt</code></pre>
 

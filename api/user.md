@@ -37,6 +37,10 @@ Following JSON payload should be sent to create a new project:
     "verifyPassword":" PASSWORD ",
     "firstName":"FirstName",
     "lastName":"LastName",
+    "timezone":"TIMEZONE|NULL",
+    "country":"COUNTRY",
+    "phoneNumber":"NUMBER",
+    "ssoProvider":"SSO-PROVIDER"
  }
 }
 </pre>
