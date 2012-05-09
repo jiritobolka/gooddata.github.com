@@ -32,6 +32,10 @@ A user with the SSO provider can have access to GoodData project without using a
 
 Once you have your own domain, you can add or delete users inside your Domain. You can provision these users into GoodData Project, change their role etc. Only domain administrator user can provision other users to projects. 
 
+<p>
+<center><img src="{{ site.root }}/images/docs/user-management.png" alt="User Management" class="no-border"></center>
+</p>
+
 **Security**
 
 Security is provided by asymmetric electronic signature. Partner's private key is encrypted by GoodData public key. More information below.
