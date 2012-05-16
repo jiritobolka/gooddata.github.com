@@ -23,7 +23,7 @@ A user with the SSO provider can have access to GoodData project without using a
 
 **SSO Security**
 
-The SSO Security is provided by asymmetric electronic signature. Partner public key is sent to GoodData and 
+The SSO Security is provided by asymmetric electronic signature. Partner's public key is sent to GoodData to allow security token decryption.
 
 <p>
 <center><img src="{{ site.root }}/images/docs/keys.png" alt="Public-Private Keys" class="no-border"></center>
