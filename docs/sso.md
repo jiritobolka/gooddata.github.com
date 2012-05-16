@@ -9,10 +9,7 @@ stub: docs-sso
 <br />
 ## Why SSO
  
-If you would like to see GoodData dashboard inside your intranet or web application. The key benefits are:
-
-- you don't need to login to GoodData to see embedded report/dashboard
-- you can maintain your domain users
+To see GoodData dashboard inside your intranet or web application. The key benefit is that you can embed GoodData reports and dashboards inside your application without logging.
 
 <p>
 <center><img src="{{ site.root }}/images/docs/sso.png" alt="SSO visualization" class="no-border"></center>
@@ -20,83 +17,89 @@ If you would like to see GoodData dashboard inside your intranet or web applicat
 
 ## High Level Overview and Key Principles
 
-**Domains**
-
-Domain is user space that you can manage. In GoodData, domain is not part of GoodData project. As a GoodData customer, you can have your own domain, that means, you are able to add and maintain your users.  
-
 **SSO Provider**
 
 A user with the SSO provider can have access to GoodData project without using a password. User can be using his own SSO provider or other (i.e. SALESFORCE).
 
-**User Provisioning**
+**SSO Security**
 
-Once you have your own domain, you can add or delete users inside your Domain. You can provision these users into GoodData Project, change their role etc. Only domain administrator user can provision other users to projects. 
+The SSO Security is provided by asymmetric electronic signature. Partner public key is sent to GoodData and 
 
-
-**Security**
-
-Security is provided by asymmetric electronic signature. Partner's private key is encrypted by GoodData public key. More information below.
+<p>
+<center><img src="{{ site.root }}/images/docs/keys.png" alt="Public-Private Keys" class="no-border"></center>
+</p>
 
 **Embedded Dashboard/Report**
 
 The Report/Dashboard can be embedded to your application using following code:
 
-	<iframe src="https://secure.gooddata.com/gdc/account/customerlogin?sessionId=TOKEN&amp;serverURL=YOUR-COMPANY&amp;targetURL=DASHBOARD-URL"/> 
+	<iframe src="https://secure.gooddata.com/gdc/account/customerlogin?sessionId=TOKEN&amp;serverURL=SSO-IDENTIFIER&amp;targetURL=DASHBOARD-URL"/> 
 
-where
+the **/gdc/account/customerlogin** API resource is used to retrieve a dashboard/report from GoodData using SSO. Parameters are:
 
-`your-company` parameter is the http address to the domain name of your company (for 	example http://example.com)  
+`sessionId` - Parameter needs to be dynamically generated based on user you want to authenticate via the following steps
 
-`targetURL` is a relative URL to a dashboard  
+`serverURL` - This is your SSO Identifier (name)
 
-`token` parameter needs to be dynamically generated based on user you want to authenticate via the following steps
+`targetURL` - Relative URL to dashboard or report (depends on what you want to embed)  
 
-## What is needed to set up SSO
+See the illustration that shows the whole process:
 
-Following is necessary to send to enable the SSO for GoodData:
- 
-1) **admin user mail** - your domain admin email, technical user that you use for maintaining users
-
-2) **url** (relative report or dashboard url) - necessary for implementation, to recognize which dashboard/report you want to embed
-
-3) **pgp key** (signed and encrypted token) - See the process below, how the token should be signed and encrypted
-
-4) **domain** (name of your domain) - GoodData will create domain for you
-
-The main process must be done by engineering and the SSO is being released on in maintenance window or during the nearest release. 
+<p>
+<center><img src="{{ site.root }}/images/docs/process.png" alt="SSO-Process" class="no-border"></center>
+</p>
 
 ## Implementation Process
 
-1) End User/Partner sends SSO request with all necessary parts (described above) to **support@gooddata.com**  
+1) End User/Partner sends SSO request with all necessary parts (described below) to **support@gooddata.com**  
 
 2) GoodData deploy the new SSO keys and accounts to production environment
 
 3) Partner sets up his environment
 
-## How to create signed and encrypted SSO token
+## What is needed to set up SSO
+
+Following is necessary to send to enable the SSO for GoodData:
+
+1) **admin user mail** - your domain admin email, technical user that you use for maintaining users (usually gooddata@your-company.com)
+
+2) **public key** - your pgp public key (Please don't delete the PGP header and footer BEGIN/END)
+
+3) **domain** (name of your domain) - GoodData will create domain for you
+
+The main process must be done by engineering and the SSO is being released on in maintenance window or during the nearest release. 
+
+## How to generate pgp keypair
+
+There is several options to generate new public/private key pair. You can use pgp command line utility or download desktop app, that will help you with generating the public/private key pair. You can also [use this app](http://macgpg.sourceforge.net/).
+
+## Implementation on client/partner side
+ 
+Following steps will give you an explanation of how you create token that will be used for SSO login. This token is send as a parameter to customerLogin API resource (as a part of embedded dashboard/report):
  
 1) Start by constructing the following string in JSON:
 
 	{"email": "user@domain.com","validity": 123456789}
 
-the `email` corresponds to a user account set up in GoodData with SSO permissions (done by GoodData)  
+the `email` corresponds to a user account set up in GoodData with SSO permissions (email that you've previously sent to support@gooddata.com). This email will be used for logging through SSO Login resource.
 
-the `validity` is a date in UTC timezone (in UNIX timestamp format, must be **INTEGER** data type) when this authentication should expire. It should always be > now (perhaps by at least 10 minutes to allow for network delays and server clock variations). 
+the `validity` is a date in UTC timezone (in UNIX timestamp format, must be **INTEGER** data type) when generated token expire. It should always be > now (perhaps by at least 10 minutes to allow for network delays and server clock variations) and also < 36 hours. 
 
 2) Sign this string using PGP with Partner private key, make sure **not** to use the  
 `--clearsign` option:
 
 <pre><code>gpg --armor -u user@domain.com --output signed.txt --sign json.txt</code></pre>
 
-3) Encrypt the result from step 3 with GoodData public key (you can download it [here](http://developer.gooddata.com/docs/gooddata-sso.pub))
+3) Encrypt the result from step 2 with GoodData public key (you can download the public key [here](http://developer.gooddata.com/docs/gooddata-sso.pub))
 
-<pre><code>gpg --armor --output enc.txt --encrypt --recipient test@gooddata.com signed.txt</code></pre>
+<pre><code>gpg --armor --output enc.txt --encrypt --recipient security@gooddata.com signed.txt</code></pre>
 
-4) [URL-encode](http://meyerweb.com/eric/tools/dencoder/) the result from step 5
+4) URL-encode the result from step 3
 
 The above steps are summarized in this pseudo-code:
 
 {% highlight js %}
+
 token = pgp_encrypt(
 pgp_sign(
     '{"email":' + userEmailString + ',"validity":' + (now+86400) + '}',
@@ -106,7 +109,8 @@ pgp_sign(
 );
 {% endhighlight %}
 	 	 	 		
-			
+
+If you want to use prepared classes and code examples, see the next [section]({{ site.root }}/docs/sso-code-examples.html).
 
 ## FAQ
 
@@ -114,7 +118,7 @@ pgp_sign(
 
 No. The domain user may not have an access to the project automatically.
 
-`What are supported encryption algorythms?`
+`What are supported encryption algorithms?`
 
 Pubkey: RSA, RSA-E, RSA-S, ELG-E, DSA  
 Cipher: 3DES, CAST5, BLOWFISH, AES, AES192, AES256, TWOFISH
