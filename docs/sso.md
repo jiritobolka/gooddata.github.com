@@ -51,6 +51,8 @@ See the illustration that shows the whole process:
 
 ## Implementation Process
 
+The whole process usually takes around 3 weeks.
+
 1) End User/Partner sends SSO request with all necessary parts (described below) to **support@gooddata.com**  
 
 2) GoodData deploy the new SSO keys and accounts to production environment

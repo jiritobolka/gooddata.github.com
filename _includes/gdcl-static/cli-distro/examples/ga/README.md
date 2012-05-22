@@ -33,13 +33,13 @@ After you have customized the `cmd.create.txt` script, you can try the Google An
 
 _Windows:_
 
-    c:> bin\gdi.bat -u <username> -p <password> examples\ga\ga.txt
+    c:> bin\gdi.bat -u <username> -p <password> examples\ga\cmd.create.txt
     Project id = 'f5977852bfec20271d4c9bc453a263cb' created.
 
 
 _Unix like OS (Linux, Mac OS X and others):_
 
-    $ ./bin/gdi.sh -u <username> -p <password> examples/ga/ga.txt
+    $ ./bin/gdi.sh -u <username> -p <password> examples/ga/cmd.create.txt
     Project id = 'f5977852bfec20271d4c9bc453a263cb' created.
 
 ## What Next?

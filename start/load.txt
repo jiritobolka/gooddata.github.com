@@ -5,7 +5,7 @@
 RetrieveProject(fileName="sample-project.pid");
 
 # LOAD THE DATA INTO THE FRAMEWORK
-LoadCsv(csvDataFile="examples/quotes/quotes.csv", header="true", configFile="config.xml");
+LoadCsv(csvDataFile="examples/quotes/quotes.csv", hasHeader="true", configFile="config.xml");
 
 # TRANSFER THE DATA TO THE GOODDATA SERVER
 TransferData(incremental="false");
