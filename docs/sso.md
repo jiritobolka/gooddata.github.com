@@ -73,7 +73,15 @@ The main process must be done by engineering and the SSO is being released in ma
 
 ## How to generate pgp keypair
 
-There are several options to generate new public/private key pair. You can use pgp command line utility or download desktop app, that will help you with generating the public/private key pair. You can also [use this app](http://macgpg.sourceforge.net/).
+There are several options to generate new public/private key pair. You can use gpg command line utility or download desktop app, that will help you with generating the public/private key pair. If are using the gpg command line utility, generate the new keypair using following command
+
+<pre><code>gpg --gen-key</code></pre>
+
+Once you have your new key generated, import the GoodData Public Key to your keystore:
+
+<pre><code>gpg --import gooddata-sso.pub</code></pre>
+
+If you would like to use desktop client - try to use [Mac GPG](http://macgpg.sourceforge.net/) for Mac OS, or [GPG4Win](http://files.gpg4win.org/gpg4win-2.1.0.exe) for Windows platform.
 
 ## Implementation on client/partner side
  
