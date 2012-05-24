@@ -9,7 +9,7 @@ stub: docs-provisioning
 <br />
 ## What is User Provisioning
 
-User provisioning is functionality that allows specific user to create/update/delete new users and to provision them into the GoodData Project. See the picture below to get high level overview.
+User provisioning is functionality that allows a specific user to create/update/delete new users and to provision them into the GoodData Project. See the picture below to get high level overview.
 
 <p>
 <center><img src="{{ site.root }}/images/docs/user-management.png" alt="User Management" class="no-border"></center>

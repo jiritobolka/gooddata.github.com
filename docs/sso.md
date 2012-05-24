@@ -9,7 +9,7 @@ stub: docs-sso
 <br />
 ## Why SSO
  
-To see GoodData dashboard inside your intranet or web application. The key benefit is that you can embed GoodData reports and dashboards inside your application without logging.
+To see a GoodData dashboard inside your intranet or web application. The key benefit is that you can embed GoodData reports and dashboards inside your application without logging.
 
 <p>
 <center><img src="{{ site.root }}/images/docs/sso.png" alt="SSO visualization" class="no-border"></center>
@@ -23,7 +23,7 @@ A user with the SSO provider can have access to GoodData project without using a
 
 **SSO Security**
 
-The SSO Security is provided by asymmetric electronic signature. Partner's public key is sent to GoodData to allow security token decryption.
+The SSO Security is provided by an asymmetric electronic signature. Partner's public key is sent to GoodData to allow security token decryption.
 
 <p>
 <center><img src="{{ site.root }}/images/docs/keys.png" alt="Public-Private Keys" class="no-border"></center>
@@ -69,15 +69,15 @@ Following is necessary to send to enable the SSO for GoodData:
 
 3) **domain** (name of your domain) - GoodData will create domain for you
 
-The main process must be done by engineering and the SSO is being released on in maintenance window or during the nearest release. 
+The main process must be done by engineering and the SSO is being released in maintenance window or during the nearest release. 
 
 ## How to generate pgp keypair
 
-There is several options to generate new public/private key pair. You can use pgp command line utility or download desktop app, that will help you with generating the public/private key pair. You can also [use this app](http://macgpg.sourceforge.net/).
+There are several options to generate new public/private key pair. You can use pgp command line utility or download desktop app, that will help you with generating the public/private key pair. You can also [use this app](http://macgpg.sourceforge.net/).
 
 ## Implementation on client/partner side
  
-Following steps will give you an explanation of how you create token that will be used for SSO login. This token is send as a parameter to customerLogin API resource (as a part of embedded dashboard/report):
+Following steps will give you an explanation of how you create token that will be used for SSO login. This token is sent as a parameter to customerLogin API resource (as a part of embedded dashboard/report):
  
 1) Start by constructing the following string in JSON:
 
