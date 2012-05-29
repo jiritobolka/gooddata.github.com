@@ -24,13 +24,13 @@ The Java source code is avialable. <a href="{{ site.root }}/gooddata-cl/">Read&n
 
 <a class="greenButton" href="http://github.com/gooddata/GoodData-CL/downloads">Download GoodData CL</a>
 
-<!-----
+-----
 
-## SnapLogic
-You can try GoodData in SnapLogic as part of their [30-day trial](http://www.snaplogic.com/live-snaplogic-demo/). If you have an existing SnapLogic instance, you can download a [GoodData Snap component](http://store.snaplogic.com/collections/frontpage/products/good-data) for free &mdash; this will allow you to upload data integration results into GoodData effortlessly. <a href="http://www.snaplogic.com/live-snaplogic-demo/">Trial&nbsp;Signup…</a>
+## GoodData C# Tool
+The GoodData C# tool is still in the development, but you can already use it for some use cases. It will help you for example with the SSO implementation. See the [GitHub repository](https://github.com/jkind/gooddata-csharp).
 
-<a class="greenButton" href="http://store.snaplogic.com/collections/frontpage/products/good-data">Download GoodData Snap</a>
--->
+<a class="greenButton" href="https://github.com/jkind/gooddata-csharp">Download GoodData C#</a>
+
 -----
 
 ## WWW::GoodData (Perl)

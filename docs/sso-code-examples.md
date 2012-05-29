@@ -1,5 +1,5 @@
 ---
-title: Java SSO example
+title: SSO Code Examples
 layout: documentation
 stub: docs-sso-java
 ---
@@ -7,7 +7,12 @@ stub: docs-sso-java
 # {{ page.title }}
 
 <br />
-## How to use it
+## Content
+
+- Java SSO example and library reference
+- C# class reference
+
+# Java SSO Example
 
 Use our prepared Java class to integrate your application with GoodData using the SSO. The class will help you with Generating the SSO token that you will be sending as a parameter to the 
 
@@ -107,3 +112,15 @@ x/JHf6Iv
 -----END PGP MESSAGE-----
 </pre>
 
+
+<hr />
+
+# C# SSO Library
+
+If you prefer C# as your main programming language, use following tool that will help you create the GoodData SSO token. The library provides you similar functionality as the Java library above.
+
+## How to get it and use it
+
+Follow the [GitHub repository](https://github.com/jkind/gooddata-csharp) that has been created by Jon Kind. This is not only the SSO tool, it also covers some other GoodData API's and is currently in development.
+
+The workflow is similar to the Java library, you can use the GoodDataService/SSO/SSOProvider.cs class. The [Read Me](https://github.com/jkind/gooddata-csharp/blob/master/README.md) file will also help you.
