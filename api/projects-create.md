@@ -150,8 +150,8 @@ Following JSON payload should be sent to export project:
 
 <pre>
 { "exportProject" : {
-     "exportUsers" : "boolean",
-     "exportData" : "boolean"
+     "exportUsers" : "integer",
+     "exportData" : "integer"
   }
 }
 </pre>

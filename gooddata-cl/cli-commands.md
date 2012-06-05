@@ -155,7 +155,7 @@ Data Commands:
 `Dump(csvFile="...");` - dumps the connector data to a local CSV file
 - csvFile   - path to the CSV file
 
-`ExecuteDml(maql="...");` - executes a MAQL DML command (e.g. DELETE)
+`ExecuteDml(maql='...');` - executes a MAQL DML command (e.g. DELETE)
 - maql   - the maqlDML command
 
 Data Connectors:
@@ -217,7 +217,7 @@ JDBC Connector Commands:
 - password   - *(optional)* JDBC password
 
 `UseJdbc(configFile="...", driver="...", url="...", query="...", username="...", password="...");` - load JDBC data file using config file describing the file structure, must call `CreateProject` or `OpenProject` before
-- configFile - path to configuration file (will be overwritten)
+- configFile - path to configuration file
 - driver     - JDBC driver string (e.g. "org.apache.derby.jdbc.EmbeddedDriver"), you'll need to place the JAR with the JDBC driver to the lib subdirectory
 - url        - JDBC url (e.g. "jdbc:derby:mydb")
 - query      - SQL query (e.g. "SELECT employee,dept,salary FROM payroll")
