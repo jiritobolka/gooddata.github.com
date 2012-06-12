@@ -89,6 +89,8 @@ Following steps will give you an explanation of how you create token that will b
  
 1) Start by constructing the following string in JSON:
 
+**Note:** The email is case sensitive. So User@domain.com is not the same as user@domain.com.
+
 	{"email": "user@domain.com","validity": 123456789}
 
 the `email` corresponds to a user account set up in GoodData with SSO permissions (email that you've previously sent to support@gooddata.com). This email will be used for logging through SSO Login resource.
