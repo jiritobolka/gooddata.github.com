@@ -25,8 +25,8 @@ Domain needs to be created manually, you can request the creation sending email 
 
 ## Creating new user 
 
-To create new user in GoodData you need to have a domain created. You can have your own domain and maintain users in it even if you don't have the SSO implemented. Once you have your domain, you can use the [User Provisioning API]({{ site.root }}/docs/api/user.html). Only domain admins can add users to the project.
+To create new user in GoodData you need to have a domain created. You can have your own domain and maintain users in it even if you don't have the SSO implemented. Once you have your domain, you can use the [User Provisioning API]({{ site.root }}/api/user.html). Only domain admins can add users to the project.
 
 ## Adding User to Project
 
-Users with project admin permissions can provision users that are already in the domain to the Project. You can again use the REST API for this feature. See the [API Reference]({{ site.root }}/docs/api/user.html).
+Users with project admin permissions can provision users that are already in the domain to the Project. You can again use the REST API for this feature. See the [API Reference]({{ site.root }}/api/user.html).
