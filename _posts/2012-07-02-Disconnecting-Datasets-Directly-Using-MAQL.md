@@ -41,7 +41,7 @@ As you can see, we just successfully disconnected two datasets. Now, let’s see
 `ALTER ATTRIBUTE {attr.employee.employee} ADD KEYS {f_salary.employee_id};`  
 `SYNCHRONIZE {dataset.salary};`
 
-Remember to synchronize the dataset because you are changing the physical data model. As you can see on the picture below, model is same as in the beginning of the tutorial and you can load the data back into the Project. 
+Remember to synchronize the dataset because you are changing the physical data model. As you can see on the picture below, model is same as in the beginning of the tutorial and you can load the data back into the Project. Now, you need to reload your data. 
 
 <p>
 <center><img src="{{ site.root }}/images/posts/reconnected-dataset.png" alt="Reconnected Datasets" width="600"></center>
