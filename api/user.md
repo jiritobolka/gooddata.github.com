@@ -84,6 +84,12 @@ Accept: application/json
 
 Following JSON payload should be sent to create a new project:
 
+You can choose from this roles and use the ROLE_ID:  
+1 - Admin  
+2 - Editor  
+3 - Embedded dashboard only  
+5 - Viewer  
+
 <pre>
 { "user" : {
      "content" : {

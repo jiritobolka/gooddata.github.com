@@ -45,10 +45,11 @@ Project Management Commands:
 - msg   - *(optional)* invitation message
 - role  - *(optional)* initial user's role: `admin`|`editor`|`dashboard only`
 
-`CreateUser(domain="...", username="...", password="...", firstName="...", lastName="...", company="...", phone="...", country="...", position="...", ssoProvider="...", usersFile="...", append="...");` - creates a new user.
+`CreateUser(domain="...", username="...", password="...", email="...", firstName="...", lastName="...", company="...", phone="...", country="...", position="...", ssoProvider="...", usersFile="...", append="...");` - creates a new user.
 - domain - the GoodData users domain. The domain needs to be created by GoodData admins and associated with your GoodData account
 - username   - the new user's username
 - password   - the new user's password
+- email   - the new user's email for invitations etc.
 - firstName   - the new user's first name
 - lastName   - the new user's last name
 - company   - *(optional)* the new user's company name
