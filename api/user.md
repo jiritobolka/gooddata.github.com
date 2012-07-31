@@ -27,7 +27,7 @@ Accept: application/json
 
 ##Request Body
 
-Following JSON payload should be sent to create a new project ("email" ):
+Following JSON payload should be sent to create a new user ("email"):
 
 **"email"** - is primarily used for contacting user for invitations etc.  
 **"login"** - must be in email format. You can generate your own for your domain users (i.e. DOMAIN+john.doe@company.com)  

@@ -23,10 +23,11 @@ stub: gooddata-cl-commands
 Project Management Commands:
 ----------------------------
 
-`CreateProject(name="...", desc="...", templateUri="...");` - create a new project on the server
+`CreateProject(name="...", desc="...", templateUri="...", driver="...");` - create a new project on the server
 - name        - name of the new project
 - desc        - *(optional)* project description
 - templateUri - *(optional)* project template to create the project from
+- driver      - *(optional)* project database driver "Pg | mysql". PostgreSQL is currently in Beta version
 
 `DeleteProject(id="...");` - drop the project on the server
 - id - *(optional)* project id, if not specified, the command tries to drop the current project
