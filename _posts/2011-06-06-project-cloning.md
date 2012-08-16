@@ -46,3 +46,9 @@ If you are not sure in using the CL Tool, you can do the same thing using our so
 Here you are able to export the project. The system will generate a unique token that you will use lately to import project (store that token somewhere!). You have to create new, empty project and go to the same maintenance grey pages section, but this time choose import. You need to paste that unique token and the exported project will be imported to the new empty project. 
 
 You can choose from same options as you can using the CL Tool.
+
+**Beware!**
+Export of a project backed by MySQL warehouse can be imported to an empty project backed by MySQL or PostgreSQL warehouse.
+Export of a project backed by PostgreSQL warehouse can ONLY be imported to an empty project backed by PostgreSQL warehouse.
+
+Review what type of driver/db engine is used by your Project! See the `https://secure.gooddata.com/gdc/projects/PROJECT_ID` and review the `driver` field because of cloning correctly.
