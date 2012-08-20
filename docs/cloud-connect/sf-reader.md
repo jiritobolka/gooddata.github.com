@@ -19,15 +19,15 @@ Metadata extracted from SF using the same query.
 
 ## Attributes, Settings & Codes
 
-Salesforce connection - select one of pre-set SF connections
-SOQL query - select clause to SF
-Mandatory fields - fields should correspond to columns in the query
-Max. retry attempts - maximal number of connections retry attempts
-Pause between retries [secs] - delay between two retry attempts
+Salesforce connection - select one of pre-set SF connections  
+SOQL query - select clause to SF  
+Mandatory fields - fields should correspond to columns in the query  
+Max. retry attempts - maximal number of connections retry attempts  
+Pause between retries [secs] - delay between two retry attempts  
 
 ## Inputs & Outputs
 
-Port Type	Number	Required	Description	Metadata
+Port Type	Number	Required	Description	Metadata  
 Output	0	yes	for data records	corresponding with columns in the SOQL
 
 <a href="#" class="greenButton">Example Download</a>
