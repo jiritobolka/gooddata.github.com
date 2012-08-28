@@ -6,7 +6,7 @@ stub: docs-ftp
 
 # {{ page.title }}
 
-Following documentation describes the GoodData **project specific** data storage. Use it to send us your data files for your project.
+Following documentation describes the GoodData **project specific** data storage (read more also about [user specific storage]({{ site.root }}/docs/user-specific-data-storage.html)). Use it to send us your data files for your project.
 
 ## What is GoodData Storage?
 
