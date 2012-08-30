@@ -36,7 +36,7 @@ Following JSON payload should be sent to create a new user ("email"):
 {
  "accountSetting":{
     "login": "user@login.com",
-    "email": "user@email.com"
+    "email": "user@email.com",
     "password":"PASSWORD",
     "verifyPassword":" PASSWORD ",
     "firstName":"FirstName",
