@@ -134,3 +134,49 @@ No. The domain user may not have an access to the project automatically.
 
 Pubkey: RSA, RSA-E, RSA-S, ELG-E, DSA  
 Cipher: 3DES, CAST5, BLOWFISH, AES, AES192, AES256, TWOFISH
+
+## Debbuging
+
+**Error message:** "Message signature verification failed. Message has not been signed by SSO provider corresponding to serverURL=http://domain.com"
+
+**Possible Solutions:**
+
+- The serverURL parameter should start with "http://". Actually, it should be "http:%2F%2F" after URL encoding
+
+- Check the sessionId parameter. It should not include whitespaces or '+' characters. If this is the case, the parameter is not URL encoded properly. If you use Ruby, using CGI.escape instead of URI.escape for URL encoding is suggested
+
+- Check the sessionId parameter again. URL decode it (e.g. using this [tool](http://meyerweb.com/eric/tools/dencoder/)). The URL decoded sessionId should look like this:
+
+<pre>
+
+-----BEGIN PGP MESSAGE-----  
+Version: GnuPG v1.4.12 (Darwin)  
+
+hQEMA11tX1FLU9c7AQgAoiuE4aWhEqfTGNktBllpJEF6K33JV2k/MKBh5HnA9qyd  
+ljW/R3Wi1a3G7MLM2um9MMp3Zb+S1iv3+kXVtMisYb2HuXCFSXNhXwvI2g20S9rs  
+M4nZr7uiyJPH7Az+nromPz2tn5FlkhQBeEKIzmV22a1PXPnGrNn9ALzOOkC5CM9Y  
+Nqw0tCadMI8qzXzz/jPjjbF/eP5F+CKVluiRQKtrl1S17I20RyxVbD14AbW6qhOL  
+H4H2MSgCR8aF8zaFT7BMKceWQKBUKda98PcnFLjeY6jFVjofrjpvQFlTx+1Kiepf  
+zFyk/2tY2GUs1ltfU02DmBsumXL7dP/S/sDdLeLqR9LpAV3F+wAft/40Jr1KEwjr  
+kgHd/sxq2g4lzWvFC6qJlbdTqBnEYQyCigUAwogg2Dpe4v5hvjbt95CnNPTEviYM  
+tvzs5MbrhG14g9AIObSozbB9S18kCTd+XUrZeYf5coRvVRTS2CXHDdp5SB+a3Ti/  
+8ez7bblS6XVfAURn6iTKtEJt3/N2rqJymCSAaU+F3Y8nyzanB5b/XWt1rbJSzIZV  
+xjsOorfLFdFZplnSRWR3mhW6YOZKlQmdGZbPfTdEgr8AzEF/YKpQ7RBZxtG9gM3M  
+yHUu5sijkRNo1sZP8Cdj5W+owmoR+ft2/FOKiztUlpjxENZef0nYcCVPn6fAMlsR  
+hQmbtsjl6UoqFcbJmkJ69eh43VDXnzpLwsQN/4e8n3WYI0LzTQ++dkdLuPuphhgK  
+zeyEjqqdbzraSvL8ssp4g1y4mu2Sa70wsHABbIid8UTvIeFEMjmospZypKL6vmcY  
+XK0cuyrRTXPn6F+mCZmRWKMF0tg4XQv8kuELsbumHE5t0coE9ziKfGLMtnsSgo3S  
+VdKFgMEVqfV9zt4zWyg0S4J/I04Uo8In2AuQ3kXbOTmwGkaxIgCvQ1SySukBO9Fi  
+KZbiuMtuJ4DPLY4S8oHzBscihczMz4/tAMVdkDgGhR4vB9OxjZ6P9vG16MiLRwsK  
+5mbr+1v8EHVOh3qpCDwD4u40uMjxK6Q5qOgyoZNp9lBOTRlWtc7o6ty5ybtzRABv  
+5ClJZbuolQF8/9PeHjWE23UjmS6xXA==
+=TgFF
+-----END PGP MESSAGE-----
+</pre>
+
+It should be enclosed with the BEGIN/END lines as above. The encoded string should not include whitespaces. All lines of the body should be of the same length except for the last two lines.
+
+**Error:** Dashboard not found (may occur only in Safari while it works in Chrome and Firefox)
+
+**Solution:** The targetURL parameter should be URL encoded (it should not include the '#' character)
+
