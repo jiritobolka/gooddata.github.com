@@ -1,5 +1,5 @@
 ---
-title: Loading your SalesForce data into GoodData
+title: Loading your Salesforce data into GoodData
 layout: gdcl-examples
 stub: gooddata-cl-examples-sfdc
 ---

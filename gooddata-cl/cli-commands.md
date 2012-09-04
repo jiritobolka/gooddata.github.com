@@ -235,7 +235,7 @@ JDBC Connector Commands:
 - password - *(optional)* JDBC password
 
 
-SalesForce Connector Commands:
+Salesforce Connector Commands:
 ------------------------------
 
 `GenerateSfdcConfig(name="...", configFile="...", query="...", username="...", password="...", token="...");` - generate an XML config file based on the fields from your SFDC query.
@@ -245,15 +245,15 @@ SalesForce Connector Commands:
 - username   - SFDC username
 - password   - SFDC password
 - token      - SFDC security token (you may append the security token to the password instead using this parameter)
-- partnerId  - SFDC client ID (partner token) that allows extended access to the SalesForce API
+- partnerId  - SFDC client ID (partner token) that allows extended access to the Salesforce API
 
-`UseSfdc(configFile="...", query="...", username="...", password="...", token="...");` - load SalesForce data file using config file describing the file structure, must call `CreateProject` or `OpenProject` before
+`UseSfdc(configFile="...", query="...", username="...", password="...", token="...");` - load Salesforce data file using config file describing the file structure, must call `CreateProject` or `OpenProject` before
 - configFile - path to configuration file (will be overwritten)
 - query      - SOQL query (e.g. "SELECT Id, Name FROM Account"), see http://www.salesforce.com/us/developer/docs/api/Content/data_model.htm
 - username   - SFDC username
 - password   - SFDC password
 - token      - SFDC security token (you may append the security token to the password instead using this parameter)
-- partnerId  - SFDC client ID (partner token) that allows extended access to the SalesForce API
+- partnerId  - SFDC client ID (partner token) that allows extended access to the Salesforce API
 
 
 MS CRM 2011 Online Connector Commands:
