@@ -12,7 +12,7 @@ stub: api-projects-create
 ## Description
 
 Create a new project specified by parameters in JSON payload. You need to be authenticated, see
-details about the [authentication](api/auth.html).
+details about the [authentication](auth.html).
 
 ##Request
 
