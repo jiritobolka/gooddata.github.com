@@ -143,7 +143,7 @@ Cipher: 3DES, CAST5, BLOWFISH, AES, AES192, AES256, TWOFISH
 
 - The serverURL parameter should start with "http://". Actually, it should be "http:%2F%2F" after URL encoding
 
-- Check the sessionId parameter. It should not include whitespaces or '+' characters. If this is the case, the parameter is not URL encoded properly. If you use Ruby, using CGI.escape instead of URI.escape for URL encoding is suggested
+- Check the sessionId parameter. It should not include whitespaces or '+' characters. If this is the case, the parameter is not URL encoded properly. If you use Ruby, use CGI.escape for URL encoding. 
 
 - Check the sessionId parameter again. URL decode it (e.g. using this [tool](http://meyerweb.com/eric/tools/dencoder/)). The URL decoded sessionId should look like this:
 
