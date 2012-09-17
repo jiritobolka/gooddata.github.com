@@ -10,7 +10,7 @@ _by Jiri Tobolka ([@jirtob](http://twitter.com/jirtob))_
 
 Hi everyone! Today we'll take a look at a new feature that helps you being up-to-date with your data. Cory has already mentioned it in the end of his [Building an Analytics App](http://www.gooddata.com/blog/building-an-app-part-2) post. If you want to know what's going on in your Analytics App but don't want to login to GoodData every time you want to check your KPIs, then the Notifications feature is a must have.
 
-How do GoodData Notifications work? You set the condition for a metric (i.e. number of Chatter posts per Opportunity < 16 ). Every time the condition is fulfilled, the application sends the notification to the specified channel. The specified channel can be for example the SalesForce Chatter or Twilio, for example.
+How do GoodData Notifications work? You set the condition for a metric (i.e. number of Chatter posts per Opportunity < 16 ). Every time the condition is fulfilled, the application sends the notification to the specified channel. The specified channel can be for example the Salesforce Chatter or Twilio, for example.
 
 ## Using the GoodData API via REST Client
 
@@ -40,7 +40,7 @@ The Channel Configuration is located on following URL
 
 **Note:** You have to use your profile ID in the request URL. This doesn't work with profile Email.
 
-and is used to configure delivery channels. GoodData currently supports two Notifications Channels - SalesForce Chatter and Twilio. To configure the notification that will appear on your SalesForce Chatter, you need to POST the payload that is similar to what is shown below.
+and is used to configure delivery channels. GoodData currently supports two Notifications Channels - Salesforce Chatter and Twilio. To configure the notification that will appear on your Salesforce Chatter, you need to POST the payload that is similar to what is shown below.
 
 {% highlight ruby %}{
    "channelConfiguration":{

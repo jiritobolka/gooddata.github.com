@@ -10,7 +10,7 @@ _by Jiri Tobolka ([@jirtob](http://twitter.com/jirtob))_
 
 Hi everybody! No matter if you work on a killer Analytics App, or just started using GoodData, you’ll always want to learn something new. I hope I’ve got something for you. Today I would like to teach you how to use transformations in metrics. 
 
-First, let me introduce the problem. Imagine you are a data analyst and you would like to create a time over time comparison report for your Sales Director to have a better overview of the company's sales data from your SalesForce CRM. Got it? Let's do it!
+First, let me introduce the problem. Imagine you are a data analyst and you would like to create a time over time comparison report for your Sales Director to have a better overview of the company's sales data from your Salesforce CRM. Got it? Let's do it!
 
 ## Time over Time Comparison reports
 

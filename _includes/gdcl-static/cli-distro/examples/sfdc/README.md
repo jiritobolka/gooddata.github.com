@@ -1,4 +1,4 @@
-# Loading SalesForce data into GoodData
+# Loading Salesforce data into GoodData
 
 ## About this example
 
@@ -18,7 +18,7 @@ _Unix like OS (Linux, Mac OS X and others):_
     Data successfully loaded.
     Data successfully loaded.
 
-Note: this example fetches sample data from GoodData's demo account at SalesForce. 
+Note: this example fetches sample data from GoodData's demo account at Salesforce. 
 
 ## What's Inside?
 
@@ -44,7 +44,7 @@ For a more detailed description of joining multiple data sets refer to the [HR e
 
 ## What next?
 
-In order to customize this example to import your own SalesForce data into GoodData, you will need to change the SFDC username, password and security token parameters that are passed to `UseSfdc` and optionally `GenerateSfdcConfig` commands in the `sfdc.txt` script file.
+In order to customize this example to import your own Salesforce data into GoodData, you will need to change the SFDC username, password and security token parameters that are passed to `UseSfdc` and optionally `GenerateSfdcConfig` commands in the `sfdc.txt` script file.
 
 **Note:** you need the _Enterprise Editition_ of Salesforce to be able to access your Salesforce data using the API. Alternatively, the _Professional Edition_ users may enable API access as an extra option.
 
@@ -71,7 +71,7 @@ The `query` attribute of the `UseSfdc` command specifies a query writen in the [
 
 The most simple data set takes the form of `SELECT <field1>, <field2>, ... FROM <object>` such as the `SELECT Id, Name FROM Account` query used to defined the _Accounts_ data set in this example. The API names of standard objects and their fields are listed in the [Salesforce API documentation](http://www.salesforce.com/us/developer/docs/api/Content/sforce_api_objects_list.htm).
 
-When adding a data set featuring custom fields or even custom object you need to know the API names of the custom fields. These API names can be found under the _Setup_ menu of your Salesforce. For example, in order to get the API name of the `Contract Value` field of GoodData's SalesForce we need to:
+When adding a data set featuring custom fields or even custom object you need to know the API names of the custom fields. These API names can be found under the _Setup_ menu of your Salesforce. For example, in order to get the API name of the `Contract Value` field of GoodData's Salesforce we need to:
 
  1. **Click _Setup_ in the main menu** and expand App Setup / Customize / Opportunities / Fields items in the left menu bar:
  ![Click Setup and expand App Setup etc](http://developer.gooddata.com/images/gdcl/examples/sfdc/sfdc_fields_01_setup.png)
