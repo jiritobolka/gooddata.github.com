@@ -14,7 +14,7 @@ Hello all you analysis ninjas! Today I'd like to start a huge topic which is ver
 
 Remember earlier [Analyzing Changes](http://developer.gooddata.com/blog/2011/07/29/Analyzing-Change/) blogpost? I hope so! If you want to use the snapshotting technique you need to store all your data somewhere. By storing your complete data, you'll have access to all of the data snapshots in your storage and you will be able to analyze changes. 
 
-Imagine that you have, let’s say, about 100k rows of data in your SalesForce application and you would like to upload it on regular basis (i.e. weekly). You also want to store all weekly loads, because you'll need to have the history of data values. This is very memory consuming process.
+Imagine that you have, let’s say, about 100k rows of data in your Salesforce application and you would like to upload it on regular basis (i.e. weekly). You also want to store all weekly loads, because you'll need to have the history of data values. This is very memory consuming process.
 
 <p>
 <center><img src="{{ site.root }}/images/posts/event-store/snapshots.png" alt="Reports"></center>

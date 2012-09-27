@@ -3,10 +3,10 @@ layout: documentation
 stub: cloud-connect-sf-reader
 ---
 
-# SalesForce Reader 
+# Salesforce Reader 
 
 <img src="{{ site.root }}/docs/cloud-connect/images/sf-reader.png" style="border:none;float:right;margin:15px 0 0 5px;"/>
-SF Reader downloads data from a single [SalesForce](http://www.salesforce.com/) dataset. The component requires SalesForce connection consisting of the login, password and security token to connect to the SalesForce account. Dataset, its fields and some conditional clause is defined by [SOQL](http://www.salesforce.com/us/developer/docs/api/Content/sforce_api_calls_soql_select.htm)
+SF Reader downloads data from a single [Salesforce](http://www.salesforce.com/) dataset. The component requires Salesforce connection consisting of the login, password and security token to connect to the Salesforce account. Dataset, its fields and some conditional clause is defined by [SOQL](http://www.salesforce.com/us/developer/docs/api/Content/sforce_api_calls_soql_select.htm)
 
 Downloaded records are sent to the only output port of the reader. The components provides the possibility of setting the number of automatic retry attempts and pauses between them.
 
