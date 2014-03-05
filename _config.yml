@@ -7,8 +7,8 @@ pygments: true
 #
 # Site configuration
 #
-url:          http://developer.gooddata.com
-title:        GoodData Developer Blog
+url:          http://sdk.gooddata.com
+title:        GoodData SDK Site
 description:  Updates on the GoodData tools and APIs ecosystem
 keywords:     gooddata, good, data, blog, bi, analytics, gdcl, cl, integration, upload, analyze
 author:       Good Data
